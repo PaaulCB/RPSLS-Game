@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>RPSLS-game</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <h1>RockPaperScissorsLizzardSpoke</h1>
+    </header>
+    <main>
+      <!--Game menu-->
+      <div class="game-menu">
+        <button id="starter">Start game!</button>
+        <input type="radio" id="lvl-one" name="difficulty" />
+        <label for="lvl-one">1</label>
+        <input type="radio" id="lvl-two" name="difficulty" />
+        <label for="lvl-two">2</label>
+        <input type="radio" id="lvl-three" name="difficulty" />
+        <label for="lvl-three">3</label>
+        <div>
+          <p>How to play</p>
+          <p id="instructions">Instructions</p>
+        </div>
+      </div>
+      <!--Game area-->
+      <div class="game-area">
+        <div id="player-area">
+          <p id="player-score">0</p>
+          <div id="player-choise">Sc</div>
+        </div>
+        <div>VS</div>
+        <div id="cpu-area">
+          <p id="cpu-score">0</p>
+          <div id="cpu-choise">R</div>
+        </div>
+      </div>
+      <!--Game options-->
+      <div class="options-area">
+        <button data-option="rock" class="option">R</button>
+        <button data-option="paper" class="option">P</button>
+        <button data-option="scissors" class="option">Sc</button>
+        <button data-option="lizard" class="option">L</button>
+        <button data-option="spoke" class="option">Sp</button>
+      </div>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
