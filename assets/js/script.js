@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function startGame() {
+    //Makes the game area visible
+    let gameArea = document.getElementsByClassName("game-area")[0];
+    gameArea.style.display = "block";
+    //Hides the game menu
+    let gameMenu = document.getElementsByClassName("game-menu")[0];
+    gameMenu.style.display = "none";
 }
 
 function cpuPick(diff) {
@@ -34,12 +40,15 @@ function updateLose() {
 
 }
 
+/**Shows the instruccions when the user clicks on the paragraph
+ */
 function showInstructions() {
-
+    document.getElementById("instructions").style.display = "block";
 }
-
+/**Hide the instruccions when the user clicks on the close button
+ */
 function hideInstructions() {
-
+    document.getElementById("instructions").style.display = "none";
 }
 
 function endGame() {
