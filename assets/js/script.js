@@ -34,11 +34,21 @@ function startGame() {
 }
 //**Gets the game difficulty when the player starts a game */
 function getDifficulty() {
-
+    let difficulties = document.getElementsByName("difficulty");
+    for (let diff of difficulties) {
+        if (diff.checked) {
+            return diff.value;
+        }
+    }
 }
 //**Gets the game mode when the player starts a game */
 function getMode() {
-
+    let modes = document.getElementsByName("mode");
+    for (let mode of modes) {
+        if (mode.checked) {
+            return mode.value;
+        }
+    }
 }
 
 function cpuPick(diff) {
