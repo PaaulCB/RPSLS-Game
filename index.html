@@ -16,15 +16,32 @@
       <!--Game menu-->
       <div class="game-menu">
         <button id="starter">Start game!</button>
-        <input type="radio" id="lvl-one" name="difficulty" />
-        <label for="lvl-one">1</label>
-        <input type="radio" id="lvl-two" name="difficulty" />
-        <label for="lvl-two">2</label>
-        <input type="radio" id="lvl-three" name="difficulty" />
-        <label for="lvl-three">3</label>
+        <!--Difficulty selector-->
+        <div id="difficulty-selector">
+          <p>Choose difficulty</p>
+          <input type="radio" id="lvl-one" name="difficulty" checked />
+          <label for="lvl-one">1</label>
+          <input type="radio" id="lvl-two" name="difficulty" />
+          <label for="lvl-two">2</label>
+          <input type="radio" id="lvl-three" name="difficulty" />
+          <label for="lvl-three">3</label>
+        </div>
+        <!--Mode selector-->
+        <div id="mode-selector">
+          <p>Choose game mode</p>
+          <input type="radio" id="best-of-three" name="mode" checked />
+          <label for="best-of-five">BO3</label>
+          <input type="radio" id="best-of-five" name="mode" />
+          <label for="best-of-five">BO5</label>
+          <input type="radio" id="lose-five" name="mode" />
+          <label for="lose-five">Until5</label>
+        </div>
         <div>
           <p>How to play</p>
-          <p id="instructions">Instructions</p>
+          <div id="instructions">
+            <p>Instructions</p>
+            <button>X</button>
+          </div>
         </div>
       </div>
       <!--Game area-->
@@ -38,14 +55,14 @@
           <p id="cpu-score">0</p>
           <div id="cpu-choise">R</div>
         </div>
-      </div>
-      <!--Game options-->
-      <div class="options-area">
-        <button data-option="rock" class="option">R</button>
-        <button data-option="paper" class="option">P</button>
-        <button data-option="scissors" class="option">Sc</button>
-        <button data-option="lizard" class="option">L</button>
-        <button data-option="spoke" class="option">Sp</button>
+        <!--Game options-->
+        <div class="options-area">
+          <button data-option="rock" class="option">R</button>
+          <button data-option="paper" class="option">P</button>
+          <button data-option="scissors" class="option">Sc</button>
+          <button data-option="lizard" class="option">L</button>
+          <button data-option="spoke" class="option">Sp</button>
+        </div>
       </div>
     </main>
     <script src="assets/js/script.js"></script>
