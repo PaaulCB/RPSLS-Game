@@ -1,0 +1,5 @@
+/*Hide game area and instructions*/
+div.game-area,
+div#instructions {
+    display: none;
+}
