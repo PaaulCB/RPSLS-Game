@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     instr.previousElementSibling.addEventListener("click", showInstructions);
     instr.children[1].addEventListener("click", hideInstructions);
 });
+//Global var to check if its the first time that the user starts the game
+var firstTime = true;
 
 function startGame() {
     //Makes the game area visible
@@ -14,6 +16,29 @@ function startGame() {
     //Hides the game menu
     let gameMenu = document.getElementsByClassName("game-menu")[0];
     gameMenu.style.display = "none";
+    let diff = getDifficulty();
+    let mode = getMode();
+    //Add event listener to the option buttons only if is the first time
+    //that starts the game
+    if (firstTime) {
+        let options = document.getElementsByClassName("option");
+
+        for (let option of options) {
+            let pick = option.getAttribute("data-option");
+            console.log(pick);
+            option.addEventListener("click", checkWin(pick, cpuPick(diff)));
+        }
+
+        firstTime = false;
+    }
+}
+//**Gets the game difficulty when the player starts a game */
+function getDifficulty() {
+
+}
+//**Gets the game mode when the player starts a game */
+function getMode() {
+
 }
 
 function cpuPick(diff) {
