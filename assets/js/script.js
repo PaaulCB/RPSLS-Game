@@ -218,7 +218,8 @@ function checkGameOver() {
 }
 
 /**
- * Hides the game area and shows the game menu again, resets the scores and 
+ * Hides the game area and shows the game menu again, 
+ * resets the scores and the picks and
  * updates the results div
  */
 function endGame() {
@@ -232,8 +233,11 @@ function endGame() {
   //Resets scores
   document.getElementById("player-score").innerText = "0";
   document.getElementById("cpu-score").innerText = "0";
+  //Resets picks
+  document.getElementById("player-choise").innerText = "?";
+  document.getElementById("cpu-choise").innerText = "?";
 }
-
+//**Updates the text on the results div*/
 function updateResults() {
 
   let result;
