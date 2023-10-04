@@ -145,7 +145,7 @@ function checkWin(player, cpu, mode) {
     }
 
     //Checks if the game its over
-    if(checkGameOver(mode)){
+    if (checkGameOver(mode)) {
         endGame();
     }
 
@@ -179,7 +179,7 @@ function hideInstructions() {
     document.getElementById("instructions").style.display = "none";
 }
 //**Checks the scores and returns a boolean depending on the game mode */
-function checkGameOver(mode){
+function checkGameOver(mode) {
     let pScore = parseInt(document.getElementById("player-score").innerText);
     let cpuScore = parseInt(document.getElementById("cpu-score").innerText);
     let gOver;
@@ -218,6 +218,12 @@ function endGame() {
     document.getElementById("cpu-score").innerText = "0";
 }
 
-function updateResults(){
+function updateResults() {
 
+    let result;
+    let pScore = document.getElementById("player-score").innerText;
+    let cpuScore = document.getElementById("cpu-score").innerText;
+    let mode = getMode();
+    result = `Your last score was ${pScore} - ${cpuScore} on a ${mode} mode`;
+    return result;
 }
