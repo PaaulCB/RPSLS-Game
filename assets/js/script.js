@@ -16,7 +16,7 @@ const gamePicks = [
     ["rock", "icon 3"],
     ["lizard", "icon 4"],
     ["spoke", "icon 5"]];
-
+//**Hides the game menu and shows the game area when start the game */
 function startGame() {
     //Makes the game area visible
     let gameArea = document.getElementsByClassName("game-area")[0];
@@ -67,7 +67,7 @@ function cpuPick(diff, pick) {
         //If the difficulty is 1, 25% of the times will pick a lossing option
         case 1:
             if ((Math.random() * 100 + 1) <= 25) {
-                return pickLose(pick);
+                return specialPick(pick,"lose");
             } else {
                 return randomPick;
             }
@@ -77,7 +77,7 @@ function cpuPick(diff, pick) {
         //If the difficulty is 3, 25% of the times will pick a winner option
         case 3:
             if ((Math.random() * 100 + 1) <= 25) {
-                return pickLose(pick);
+                return specialPick(pick,"win");
             } else {
                 return randomPick;
             }
@@ -85,12 +85,10 @@ function cpuPick(diff, pick) {
             alert("Error, invalid difficulty");
     }
 }
-
-function pickWin(player) {
-
-}
-
-function pickLose(player) {
+/**Return a pick that always win or lose against the user pick
+ * depending on the type paramater
+ */
+function specialPick(player,type) {
 
 }
 
