@@ -3,3 +3,48 @@ div.game-area,
 div#instructions {
     display: none;
 }
+
+/*Game area layout*/
+div.game-area {
+    display: grid;
+    place-items: center;
+    gap: 1vw;
+    width: 100%;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+
+/*Game options layout*/
+.rock {
+    grid-area: rock;
+}
+
+.paper {
+    grid-area: paper;
+}
+
+.scissors {
+    grid-area: scissors;
+}
+
+.lizard {
+    grid-area: lizard;
+}
+
+.spock {
+    grid-area: spock;
+}
+
+div.options-area {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "rock rock paper paper scissors scissors"
+        ". lizard lizard spock spock .";
+}
+
+/*Game options styles*/
+.option i {
+    font-size: 5rem;
+}
