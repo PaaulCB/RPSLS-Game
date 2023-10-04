@@ -1,9 +1,3 @@
-/*Hide game area and instructions*/
-div.game-area,
-div#instructions {
-    display: none;
-}
-
 /*Game area layout*/
 div.game-area {
     display: grid;
@@ -44,7 +38,18 @@ div.options-area {
         ". lizard lizard spock spock .";
 }
 
+/*Hide game area and instructions*/
+div.game-area,
+div#instructions,
+.options-area {
+    display: none;
+}
+
 /*Game options styles*/
 .option i {
     font-size: 5rem;
+}
+
+.option {
+    border-radius: 50px;
 }

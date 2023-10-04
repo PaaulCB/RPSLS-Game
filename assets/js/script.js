@@ -17,7 +17,7 @@ const gamePicks = ["scissors", "paper", "rock", "lizard", "spock"];
 function startGame() {
   //Makes the game area visible
   let gameArea = document.getElementsByClassName("game-area")[0];
-  gameArea.style.display = "block";
+  gameArea.style.display = "grid";
   //Hides the game menu
   let gameMenu = document.getElementsByClassName("game-menu")[0];
   gameMenu.style.display = "none";
@@ -25,7 +25,9 @@ function startGame() {
   //Add event listener to the option buttons only if is the first time
   //that starts the game
   if (firstTime) {
-
+    //Make the options visible
+    let gameOptions = document.getElementsByClassName("options-area")[0];
+    gameOptions.style.display = "grid";
     let options = document.getElementsByClassName("option");
 
     for (let option of options) {
