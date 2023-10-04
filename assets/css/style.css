@@ -1,3 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+/*Game menu layout*/
+div.game-menu {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+}
+
+.game-menu * {
+    text-align: center;
+}
+
 /*Game area layout*/
 div.game-area {
     display: grid;
