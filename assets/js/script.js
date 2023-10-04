@@ -201,6 +201,23 @@ function checkGameOver(mode){
     return gOver;
 }
 
+/**
+ * Hides the game area and shows the game menu again, resets the scores and 
+ * updates the results div
+ */
 function endGame() {
+
+    //Hides the game area
+    document.getElementsByClassName("game-area")[0].style.display = "none";
+    //Makes the game menu visible
+    document.getElementsByClassName("game-menu")[0].style.display = "block";
+    //Updates results
+    document.getElementById("results").innerText = updateResults();
+    //Resets scores
+    document.getElementById("player-score").innerText = "0";
+    document.getElementById("cpu-score").innerText = "0";
+}
+
+function updateResults(){
 
 }
