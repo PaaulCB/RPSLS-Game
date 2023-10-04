@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 var firstTime = true;
 //Global constant to store the possible options
 const gamePicks = ["scissors", "paper", "rock", "lizard", "spock"];
-//**Hides the game menu and shows the game area when start the game */
 
+/**Hides the game menu and shows the game area when start the game */
 function startGame() {
   //Makes the game area visible
   let gameArea = document.getElementsByClassName("game-area")[0];
@@ -41,7 +41,7 @@ function startGame() {
   }
 }
 
-//**Gets the game difficulty when the player starts a game */
+/**Gets the game difficulty*/
 function getDifficulty() {
 
   let difficulties = document.getElementsByName("difficulty");
@@ -52,7 +52,7 @@ function getDifficulty() {
   }
 }
 
-//**Gets the game mode when the player starts a game */
+/**Gets the game mode*/
 function getMode() {
 
   let modes = document.getElementsByName("mode");
@@ -62,7 +62,7 @@ function getMode() {
     }
   }
 }
-//**Gets the cpu pick depending on the game difficulty */
+/**Gets the cpu pick depending on the game difficulty */
 function cpuPick(pick) {
 
   let randomPick = gamePicks[Math.floor(Math.random() * 5)];
@@ -119,7 +119,7 @@ function specialPick(player, type) {
 /**
  * Checks the wins between player and cpu picks
  * For this function we use the same principle 
- * that we use on spacialPick function, items with 
+ * that we use on specialPick function, items with 
  * +1 and +3 index loses agains the pick and items with
  * +2 and +4 index wins agains the pick
  */
@@ -155,14 +155,14 @@ function checkWin(player, cpu) {
 
 }
 
-//**Updates the player score */
+/**Updates the player score */
 function updateWin() {
 
   let score = parseInt(document.getElementById("player-score").innerText);
   document.getElementById("player-score").innerText = ++score;
 }
 
-//**Updates the cpu score */
+/**Updates the cpu score */
 function updateLose() {
 
   let score = parseInt(document.getElementById("cpu-score").innerText);
@@ -183,20 +183,18 @@ function updatePicks(player, cpu) {
   document.getElementById("player-choise").innerHTML = icons[player];
   document.getElementById("cpu-choise").innerHTML = icons[cpu];
 }
-/**Shows the instruccions when the user clicks on the paragraph
- */
+/**Shows the instruccions when the user clicks on the paragraph*/
 function showInstructions() {
 
   document.getElementById("instructions").style.display = "block";
 }
 
-/**Hide the instruccions when the user clicks on the close button
- */
+/**Hide the instruccions when the user clicks on the close button*/
 function hideInstructions() {
 
   document.getElementById("instructions").style.display = "none";
 }
-//**Checks the scores and returns a boolean depending on the game mode */
+/**Checks the scores and returns a boolean depending on the game mode */
 function checkGameOver() {
   let pScore = parseInt(document.getElementById("player-score").innerText);
   let cpuScore = parseInt(document.getElementById("cpu-score").innerText);
@@ -239,7 +237,7 @@ function endGame() {
   document.getElementById("player-choise").innerText = "?";
   document.getElementById("cpu-choise").innerText = "?";
 }
-//**Updates the text on the results div*/
+/**Updates the text on the results div*/
 function updateResults() {
 
   let result;
