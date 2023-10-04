@@ -13,6 +13,7 @@ var firstTime = true;
 //Global constant to store the possible options
 const gamePicks = ["scissors", "paper", "rock", "lizard", "spoke"];
 //**Hides the game menu and shows the game area when start the game */
+
 function startGame() {
   //Makes the game area visible
   let gameArea = document.getElementsByClassName("game-area")[0];
@@ -20,7 +21,7 @@ function startGame() {
   //Hides the game menu
   let gameMenu = document.getElementsByClassName("game-menu")[0];
   gameMenu.style.display = "none";
-  let diff = getDifficulty();
+  
   //Add event listener to the option buttons only if is the first time
   //that starts the game
   if (firstTime) {
@@ -30,7 +31,7 @@ function startGame() {
     for (let option of options) {
       let pick = option.getAttribute("data-option");
       console.log(pick);
-      option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); });
+      option.addEventListener("click", function () { checkWin(pick, cpuPick(pick)); });
       console.log(option);
     }
 
@@ -60,10 +61,10 @@ function getMode() {
   }
 }
 //**Gets the cpu pick depending on the game difficulty */
-function cpuPick(diff, pick) {
+function cpuPick(pick) {
 
   let randomPick = gamePicks[Math.floor(Math.random() * 5)];
-  switch (diff) {
+  switch (getDifficulty()) {
     //If the difficulty is 1, 25% of the times will pick a lossing option
     case "1":
       if ((Math.random() * 100 + 1) <= 25) {
