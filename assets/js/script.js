@@ -10,12 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Global var to check if its the first time that the user starts the game
 var firstTime = true;
 //Global constant to store the possible options
-const gamePicks = [
-    ["scissors", "icon 1"],
-    ["paper", "icon 2"],
-    ["rock", "icon 3"],
-    ["lizard", "icon 4"],
-    ["spoke", "icon 5"]];
+const gamePicks = ["scissors","paper", "rock", "lizard","spoke"]; 
 //**Hides the game menu and shows the game area when start the game */
 function startGame() {
     //Makes the game area visible
@@ -62,12 +57,12 @@ function getMode() {
 }
 //**Gets the cpu pick depending on the game difficulty */
 function cpuPick(diff, pick) {
-    let randomPick = gamePicks[Math.floor(Math.random() * 5)][0];
+    let randomPick = gamePicks[Math.floor(Math.random() * 5)];
     switch (diff) {
         //If the difficulty is 1, 25% of the times will pick a lossing option
         case 1:
             if ((Math.random() * 100 + 1) <= 25) {
-                return specialPick(pick,"lose");
+                return specialPick(pick, "lose");
             } else {
                 return randomPick;
             }
@@ -77,7 +72,7 @@ function cpuPick(diff, pick) {
         //If the difficulty is 3, 25% of the times will pick a winner option
         case 3:
             if ((Math.random() * 100 + 1) <= 25) {
-                return specialPick(pick,"win");
+                return specialPick(pick, "win");
             } else {
                 return randomPick;
             }
@@ -86,9 +81,27 @@ function cpuPick(diff, pick) {
     }
 }
 /**Return a pick that always win or lose against the user pick
- * depending on the type paramater
+ * depending on the type paramater.
+ * Because of the way that the gamePicks its arranged items with 
+ * +1 and +3 index loses agains the pick and items with
+ * +2 and +4 index wins agains the pick
  */
-function specialPick(player,type) {
+function specialPick(player, type) {
+    let gamePicksCheck = gamePicks.concat(gamePicks);
+    let playerPick = gamePicks.indexOf(player);
+    if (type === "lose") {
+        if (Math.random() <= 0.5) {
+            return gamePicksCheck[playerPick + 1];
+        } else {
+            return gamePicksCheck[playerPick + 3];
+        }
+    } else if( type === "win") {
+        if (Math.random() <= 0.5) {
+            return gamePicksCheck[playerPick + 2];
+        } else {
+            return gamePicksCheck[playerPick + 4];
+        }
+    }
 
 }
 
