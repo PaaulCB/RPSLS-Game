@@ -21,7 +21,6 @@ function startGame() {
     let gameMenu = document.getElementsByClassName("game-menu")[0];
     gameMenu.style.display = "none";
     let diff = getDifficulty();
-    let mode = getMode();
     //Add event listener to the option buttons only if is the first time
     //that starts the game
     if (firstTime) {
@@ -31,7 +30,7 @@ function startGame() {
         for (let option of options) {
             let pick = option.getAttribute("data-option");
             console.log(pick);
-            option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); }, mode);
+            option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); });
             console.log(option);
         }
 
@@ -121,7 +120,7 @@ function specialPick(player, type) {
  * +1 and +3 index loses agains the pick and items with
  * +2 and +4 index wins agains the pick
  */
-function checkWin(player, cpu, mode) {
+function checkWin(player, cpu) {
 
     let gamePicksComparator = gamePicks.concat(gamePicks);
     let playerIndex = gamePicks.indexOf(player);
@@ -145,7 +144,7 @@ function checkWin(player, cpu, mode) {
     }
 
     //Checks if the game its over
-    if (checkGameOver(mode)) {
+    if (checkGameOver()) {
         endGame();
     }
 
@@ -179,23 +178,23 @@ function hideInstructions() {
     document.getElementById("instructions").style.display = "none";
 }
 //**Checks the scores and returns a boolean depending on the game mode */
-function checkGameOver(mode) {
+function checkGameOver() {
     let pScore = parseInt(document.getElementById("player-score").innerText);
     let cpuScore = parseInt(document.getElementById("cpu-score").innerText);
     let gOver;
-
-    switch (mode) {
-        case "best-of-three":
+    console.log(getMode());
+    switch (getMode()) {
+        case "BO3":
             pScore === 3 || cpuScore === 3 ? gOver = true : gOver = false;
             break;
-        case "best-of-five":
+        case "BO5":
             pScore === 5 || cpuScore === 5 ? gOver = true : gOver = false;
             break;
-        case "lose-five":
+        case "Until5":
             cpuScore === 5 ? gOver = true : gOver = false;
             break;
         default:
-            alert("invalid game mode");
+            alert("Invalid game mode");
     }
 
     return gOver;
