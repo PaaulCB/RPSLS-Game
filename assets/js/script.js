@@ -126,6 +126,8 @@ function checkWin(player, cpu) {
   let gamePicksComparator = gamePicks.concat(gamePicks);
   let playerIndex = gamePicks.indexOf(player);
   let cpuIndex = gamePicks.indexOf(cpu);
+  //Update the icons of the picks
+  updatePicks(playerIndex, cpuIndex);
   //This code make no sense if the cpuPick has smaller index then playerPick 
   if (playerIndex > cpuIndex) {
     //This index will always be bigger than playerIndex
@@ -164,7 +166,21 @@ function updateLose() {
   let score = parseInt(document.getElementById("cpu-score").innerText);
   document.getElementById("cpu-score").innerText = ++score;
 }
+/**
+ * Updates on index.html the icons chosen by the player and the cpu
+ */
+function updatePicks(player, cpu) {
 
+  const icons = [
+    '<i class="fa-regular fa-hand-scissors"></i>',
+    '<i class="fa-regular fa-hand"></i>',
+    '<i class="fa-regular fa-hand-back-fist"></i>',
+    '<i class="fa-regular fa-hand-lizard"></i>',
+    '<i class="fa-regular fa-hand-spock"></i>'
+  ];
+  document.getElementById("player-choise").innerHTML = icons[player];
+  document.getElementById("cpu-choise").innerHTML = icons[cpu];
+}
 /**Shows the instruccions when the user clicks on the paragraph
  */
 function showInstructions() {
