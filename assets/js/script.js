@@ -31,7 +31,7 @@ function startGame() {
         for (let option of options) {
             let pick = option.getAttribute("data-option");
             console.log(pick);
-            option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); });
+            option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); }, mode);
             console.log(option);
         }
 
@@ -121,7 +121,7 @@ function specialPick(player, type) {
  * +1 and +3 index loses agains the pick and items with
  * +2 and +4 index wins agains the pick
  */
-function checkWin(player, cpu) {
+function checkWin(player, cpu, mode) {
 
     let gamePicksComparator = gamePicks.concat(gamePicks);
     let playerIndex = gamePicks.indexOf(player);
@@ -142,6 +142,11 @@ function checkWin(player, cpu) {
         alert(`${player} vs ${cpu} You lose`);
         //Increase the Cpu score
         updateLose();
+    }
+
+    //Checks if the game its over
+    if(checkGameOver(mode)){
+        endGame();
     }
 
 }
@@ -172,6 +177,28 @@ function showInstructions() {
 function hideInstructions() {
 
     document.getElementById("instructions").style.display = "none";
+}
+//**Checks the scores and returns a boolean depending on the game mode */
+function checkGameOver(mode){
+    let pScore = parseInt(document.getElementById("player-score").innerText);
+    let cpuScore = parseInt(document.getElementById("cpu-score").innerText);
+    let gOver;
+
+    switch (mode) {
+        case "best-of-three":
+            pScore === 3 || cpuScore === 3 ? gOver = true : gOver = false;
+            break;
+        case "best-of-five":
+            pScore === 5 || cpuScore === 5 ? gOver = true : gOver = false;
+            break;
+        case "lose-five":
+            cpuScore === 5 ? gOver = true : gOver = false;
+            break;
+        default:
+            alert("invalid game mode");
+    }
+
+    return gOver;
 }
 
 function endGame() {
