@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Global var to check if its the first time that the user starts the game
 var firstTime = true;
 //Global constant to store the possible options
-const gamePicks = ["scissors", "paper", "rock", "lizard", "spoke"];
+const gamePicks = ["scissors", "paper", "rock", "lizard", "spock"];
 //**Hides the game menu and shows the game area when start the game */
 
 function startGame() {
@@ -21,7 +21,7 @@ function startGame() {
   //Hides the game menu
   let gameMenu = document.getElementsByClassName("game-menu")[0];
   gameMenu.style.display = "none";
-  
+
   //Add event listener to the option buttons only if is the first time
   //that starts the game
   if (firstTime) {
