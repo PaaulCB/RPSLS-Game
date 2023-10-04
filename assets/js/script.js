@@ -229,7 +229,7 @@ function endGame() {
   //Hides the game area
   document.getElementsByClassName("game-area")[0].style.display = "none";
   //Makes the game menu visible
-  document.getElementsByClassName("game-menu")[0].style.display = "block";
+  document.getElementsByClassName("game-menu")[0].style.display = "grid";
   //Updates results
   document.getElementById("results").innerText = updateResults();
   //Resets scores
