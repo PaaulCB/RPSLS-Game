@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Global var to check if its the first time that the user starts the game
 var firstTime = true;
 //Global constant to store the possible options
-const gamePicks = ["scissors","paper", "rock", "lizard","spoke"]; 
+const gamePicks = ["scissors", "paper", "rock", "lizard", "spoke"];
 //**Hides the game menu and shows the game area when start the game */
 function startGame() {
     //Makes the game area visible
@@ -29,7 +29,8 @@ function startGame() {
         for (let option of options) {
             let pick = option.getAttribute("data-option");
             console.log(pick);
-            option.addEventListener("click", checkWin(pick, cpuPick(diff, pick)));
+            option.addEventListener("click", function () { checkWin(pick, cpuPick(diff, pick)); });
+            console.log(option);
         }
 
         firstTime = false;
@@ -60,17 +61,17 @@ function cpuPick(diff, pick) {
     let randomPick = gamePicks[Math.floor(Math.random() * 5)];
     switch (diff) {
         //If the difficulty is 1, 25% of the times will pick a lossing option
-        case 1:
+        case "1":
             if ((Math.random() * 100 + 1) <= 25) {
                 return specialPick(pick, "lose");
             } else {
                 return randomPick;
             }
         //If the difficulty is 2 will pick a random option 
-        case 2:
+        case "2":
             return randomPick;
         //If the difficulty is 3, 25% of the times will pick a winner option
-        case 3:
+        case "3":
             if ((Math.random() * 100 + 1) <= 25) {
                 return specialPick(pick, "win");
             } else {
@@ -80,6 +81,7 @@ function cpuPick(diff, pick) {
             alert("Error, invalid difficulty");
     }
 }
+
 /**Return a pick that always win or lose against the user pick
  * depending on the type paramater.
  * Because of the way that the gamePicks its arranged items with 
@@ -87,30 +89,46 @@ function cpuPick(diff, pick) {
  * +2 and +4 index wins agains the pick
  */
 function specialPick(player, type) {
-    let gamePicksCheck = gamePicks.concat(gamePicks);
+    let gamePicksComparator = gamePicks.concat(gamePicks);
     let playerPick = gamePicks.indexOf(player);
     if (type === "lose") {
         if (Math.random() <= 0.5) {
-            return gamePicksCheck[playerPick + 1];
+            return gamePicksComparator[playerPick + 1];
         } else {
-            return gamePicksCheck[playerPick + 3];
+            return gamePicksComparator[playerPick + 3];
         }
-    } else if( type === "win") {
+    } else if (type === "win") {
         if (Math.random() <= 0.5) {
-            return gamePicksCheck[playerPick + 2];
+            return gamePicksComparator[playerPick + 2];
         } else {
-            return gamePicksCheck[playerPick + 4];
+            return gamePicksComparator[playerPick + 4];
         }
     }
 
 }
 
 function checkWin(player, cpu) {
+    let gamePicksComparator = gamePicks.concat(gamePicks);
+    let playerIndex = gamePicks.indexOf(player);
+    let cpuIndex = gamePicks.indexOf(cpu);
+    if (playerIndex > cpuIndex) {
+        cpuIndex = gamePicksComparator.lastIndexOf(cpu);
+    }
+
+    if (playerIndex == cpuIndex) {
+        alert(`${player} vs ${cpu} You tie`);
+    } else if (playerIndex + 1 == cpuIndex || playerIndex + 3 == cpuIndex) {
+        alert(`${player} vs ${cpu} You win`);
+        updateWin();
+    } else if (playerIndex + 2 == cpuIndex || playerIndex + 4 == cpuIndex) {
+        alert(`${player} vs ${cpu} You lose`);
+        updateLose();
+    }
 
 }
 
 function updateWin() {
-
+    
 }
 
 function updateLose() {
