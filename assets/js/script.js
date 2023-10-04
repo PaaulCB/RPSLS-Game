@@ -222,7 +222,9 @@ function updateResults() {
   let result;
   let pScore = document.getElementById("player-score").innerText;
   let cpuScore = document.getElementById("cpu-score").innerText;
+  let diff = getDifficulty();
   let mode = getMode();
   result = `Your last score was ${pScore} - ${cpuScore} on a ${mode} mode`;
+  result += ` with a lvl ${diff} difficulty`;
   return result;
 }
