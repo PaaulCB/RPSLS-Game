@@ -1,5 +1,6 @@
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function () {
+
     //Add event listener to start button ,instructions paragraph and close button
     document.getElementById("starter").addEventListener("click", startGame);
     let instr = document.getElementById("instructions");
@@ -24,6 +25,7 @@ function startGame() {
     //Add event listener to the option buttons only if is the first time
     //that starts the game
     if (firstTime) {
+
         let options = document.getElementsByClassName("option");
 
         for (let option of options) {
@@ -39,6 +41,7 @@ function startGame() {
 
 //**Gets the game difficulty when the player starts a game */
 function getDifficulty() {
+
     let difficulties = document.getElementsByName("difficulty");
     for (let diff of difficulties) {
         if (diff.checked) {
@@ -49,6 +52,7 @@ function getDifficulty() {
 
 //**Gets the game mode when the player starts a game */
 function getMode() {
+
     let modes = document.getElementsByName("mode");
     for (let mode of modes) {
         if (mode.checked) {
@@ -58,6 +62,7 @@ function getMode() {
 }
 //**Gets the cpu pick depending on the game difficulty */
 function cpuPick(diff, pick) {
+
     let randomPick = gamePicks[Math.floor(Math.random() * 5)];
     switch (diff) {
         //If the difficulty is 1, 25% of the times will pick a lossing option
@@ -82,16 +87,19 @@ function cpuPick(diff, pick) {
     }
 }
 
-/**Return a pick that always win or lose against the user pick
+/**
+ * Return a pick that always win or lose against the user pick
  * depending on the type paramater.
  * Because of the way that the gamePicks its arranged items with 
  * +1 and +3 index loses agains the pick and items with
  * +2 and +4 index wins agains the pick
  */
 function specialPick(player, type) {
+
     let gamePicksComparator = gamePicks.concat(gamePicks);
     let playerPick = gamePicks.indexOf(player);
     if (type === "lose") {
+        //Since there are two winner/losers picks, just pick one randomly
         if (Math.random() <= 0.5) {
             return gamePicksComparator[playerPick + 1];
         } else {
@@ -106,12 +114,21 @@ function specialPick(player, type) {
     }
 
 }
-
+/**
+ * Checks the wins between player and cpu picks
+ * For this function we use the same principle 
+ * that we use on spacialPick function, items with 
+ * +1 and +3 index loses agains the pick and items with
+ * +2 and +4 index wins agains the pick
+ */
 function checkWin(player, cpu) {
+
     let gamePicksComparator = gamePicks.concat(gamePicks);
     let playerIndex = gamePicks.indexOf(player);
     let cpuIndex = gamePicks.indexOf(cpu);
+    //This code make no sense if the cpuPick has smaller index then playerPick 
     if (playerIndex > cpuIndex) {
+        //This index will always be bigger than playerIndex
         cpuIndex = gamePicksComparator.lastIndexOf(cpu);
     }
 
@@ -119,31 +136,41 @@ function checkWin(player, cpu) {
         alert(`${player} vs ${cpu} You tie`);
     } else if (playerIndex + 1 == cpuIndex || playerIndex + 3 == cpuIndex) {
         alert(`${player} vs ${cpu} You win`);
+        //Increase the player score
         updateWin();
     } else if (playerIndex + 2 == cpuIndex || playerIndex + 4 == cpuIndex) {
         alert(`${player} vs ${cpu} You lose`);
+        //Increase the Cpu score
         updateLose();
     }
 
 }
 
+//**Updates the player score */
 function updateWin() {
-    
+
+    let score = parseInt(document.getElementById("player-score").innerText);
+    document.getElementById("player-score").innerText = ++score;
 }
 
+//**Updates the cpu score */
 function updateLose() {
 
+    let score = parseInt(document.getElementById("cpu-score").innerText);
+    document.getElementById("cpu-score").innerText = ++score;
 }
 
 /**Shows the instruccions when the user clicks on the paragraph
  */
 function showInstructions() {
+
     document.getElementById("instructions").style.display = "block";
 }
 
 /**Hide the instruccions when the user clicks on the close button
  */
 function hideInstructions() {
+
     document.getElementById("instructions").style.display = "none";
 }
 
