@@ -118,6 +118,23 @@ function specialPick(player, type) {
     }
 
 }
+/**Disables the picks buttons */
+function disablePicks() {
+    let options = document.getElementsByClassName("option");
+
+    for (let option of options) {
+        option.disabled = true;
+    }
+}
+/**Enables the picks buttons */
+function enablePicks() {
+    let options = document.getElementsByClassName("option");
+
+    for (let option of options) {
+        option.disabled = false;
+    }
+}
+
 /**
  * Checks the wins between player and cpu picks
  * For this function we use the same principle 
@@ -148,6 +165,9 @@ function checkWin(player, cpu) {
         updateLose();
     }
 
+    //Sets buttons cooldown
+    disablePicks();
+    setTimeout(enablePicks, 1000);
     //Checks if the game its over
     if (checkGameOver()) {
         endGame();
