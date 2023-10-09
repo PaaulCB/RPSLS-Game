@@ -167,11 +167,15 @@ function checkWin(player, cpu) {
 
     //Sets buttons cooldown
     disablePicks();
-    setTimeout(enablePicks, 1000);
     //Checks if the game its over
     if (checkGameOver()) {
-        endGame();
+        document.getElementById("game-over").style.visibility = "visible";
+        gameOverCountdown();
+        setTimeout(endGame, 5000);
+    } else {
+        setTimeout(enablePicks, 1000);
     }
+
 
 }
 
@@ -243,6 +247,22 @@ function hideInstructions() {
     document.getElementById("instructions").style.display = "none";
 }
 
+function gameOverCountdown() {
+    let time = 4;
+    let gOverMsg = document.getElementById("game-over");
+    let gameOver = setInterval(function () {
+        if (time <= 0) {
+            clearInterval(gameOver);
+            //Hides game over message and resets it text
+            document.getElementById("game-over").style.visibility = "hidden";
+            gOverMsg.innerHTML = "Game Over! Returning to menu in 5...";
+        } else {
+            gOverMsg.innerHTML = "Game Over! Returning to menu in " + time + "...";
+        }
+        time -= 1;
+    }, 1000);
+}
+
 /**Checks the scores and returns a boolean depending on the game mode */
 function checkGameOver() {
     let pScore = parseInt(document.getElementById("player-score").innerText);
@@ -289,6 +309,8 @@ function endGame() {
     document.getElementById("round-result").innerText = "";
     //Removes highlight class
     removeHighlight();
+    //Enable the picks buttons
+    enablePicks();
 }
 
 /**Updates the text on the results div*/

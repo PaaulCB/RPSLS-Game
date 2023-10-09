@@ -60,6 +60,11 @@ div#instructions,
     display: none;
 }
 
+/*Hides game-over*/
+#game-over {
+    visibility: hidden;
+}
+
 /*Game options styles*/
 .option i {
     font-size: 5rem;
@@ -68,8 +73,9 @@ div#instructions,
 .option {
     border-radius: 50px;
 }
+
 /*Round winner styles*/
-.highlight{
-color: green;
-background-color: greenyellow;
+.highlight {
+    color: green;
+    background-color: greenyellow;
 }
