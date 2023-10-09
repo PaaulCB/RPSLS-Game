@@ -68,3 +68,8 @@ div#instructions,
 .option {
     border-radius: 50px;
 }
+/*Round winner styles*/
+.highlight{
+color: green;
+background-color: greenyellow;
+}

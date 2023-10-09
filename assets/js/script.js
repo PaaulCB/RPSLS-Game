@@ -33,7 +33,9 @@ function startGame() {
     for (let option of options) {
       let pick = option.getAttribute("data-option");
       console.log(pick);
-      option.addEventListener("click", function () { checkWin(pick, cpuPick(pick)); });
+      option.addEventListener("click", function () {
+         checkWin(pick, cpuPick(pick)); 
+        });
       console.log(option);
     }
 
