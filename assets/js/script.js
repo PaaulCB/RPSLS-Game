@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let hist = document.getElementById("history");
     hist.previousElementSibling.addEventListener("click", showHistory);
     hist.children[1].addEventListener("click", hideHistory);
+    document.getElementById("guest").addEventListener("change", guestToggle);
 });
 
 //Global var to check if its the first time that the user starts the game
@@ -63,6 +64,17 @@ function checkUsername() {
     } else {
         document.getElementById("username").focus();
         document.getElementById("username").placeholder = "Insert a valid username";
+    }
+}
+
+/**Show or hide username input*/
+function guestToggle() {
+    if (document.getElementById("guest").checked) {
+        document.getElementById("username").style.display = "none";
+        document.getElementById("username").value = "";
+    } else {
+        document.getElementById("username").style.display = "block";
+        document.getElementById("username").focus();
     }
 }
 
