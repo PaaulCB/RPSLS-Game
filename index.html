@@ -20,8 +20,6 @@
     <main>
       <!--Game menu-->
       <div class="game-menu">
-        <!--Results from last game-->
-        <div id="results"></div>
         <button id="starter">Start game!</button>
         <!--Difficulty selector-->
         <div id="difficulty-selector">
@@ -54,6 +52,19 @@
           <label for="best-of-five">BO5</label>
           <input type="radio" id="lose-five" name="mode" value="Until5" />
           <label for="lose-five">Until5</label>
+        </div>
+        <!--Results from last game-->
+        <div id="history">
+          <p>History</p>
+          <table id="history-table">
+            <thead>
+              <th>Score</th>
+              <th>Mode</th>
+              <th>Lvl</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <button>X</button>
         </div>
         <div>
           <p>How to play</p>

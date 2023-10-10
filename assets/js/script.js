@@ -38,7 +38,8 @@ function startGame() {
             });
             console.log(option);
         }
-
+        //Makes history visible
+        document.getElementById("history").style.display = "block";
         firstTime = false;
     }
 }
@@ -171,7 +172,7 @@ function checkWin(player, cpu) {
     if (checkGameOver()) {
         document.getElementById("game-over").style.visibility = "visible";
         gameOverCountdown();
-        setTimeout(endGame, 5000);
+        setTimeout(endGame, 3000);
     } else {
         setTimeout(enablePicks, 1000);
     }
@@ -248,14 +249,14 @@ function hideInstructions() {
 }
 
 function gameOverCountdown() {
-    let time = 4;
+    let time = 2;
     let gOverMsg = document.getElementById("game-over");
     let gameOver = setInterval(function () {
         if (time <= 0) {
             clearInterval(gameOver);
             //Hides game over message and resets it text
             document.getElementById("game-over").style.visibility = "hidden";
-            gOverMsg.innerHTML = "Game Over! Returning to menu in 5...";
+            gOverMsg.innerHTML = "Game Over! Returning to menu in 3...";
         } else {
             gOverMsg.innerHTML = "Game Over! Returning to menu in " + time + "...";
         }
@@ -298,7 +299,7 @@ function endGame() {
     //Makes the game menu visible
     document.getElementsByClassName("game-menu")[0].style.display = "grid";
     //Updates results
-    document.getElementById("results").innerText = updateResults();
+    updateResults();
     //Resets scores
     document.getElementById("player-score").innerText = "0";
     document.getElementById("cpu-score").innerText = "0";
@@ -316,12 +317,25 @@ function endGame() {
 /**Updates the text on the results div*/
 function updateResults() {
 
-    let result;
+    let history = document.getElementById("history-table");
     let pScore = document.getElementById("player-score").innerText;
     let cpuScore = document.getElementById("cpu-score").innerText;
-    let diff = getDifficulty();
-    let mode = getMode();
-    result = `Your last score was ${pScore} - ${cpuScore} on a ${mode} mode`;
-    result += ` with a lvl ${diff} difficulty`;
-    return result;
+    //Create row
+    let row = document.createElement("tr");
+    //Create cells
+    let score = document.createElement("td");
+    let mode = document.createElement("td");
+    let lvl = document.createElement("td");
+    //Add data to cells
+    score.innerHTML = `${pScore} - ${cpuScore}`;
+    mode.innerHTML = getMode();
+    lvl.innerHTML = getDifficulty();
+    //Append cells to row
+    row.appendChild(score);
+    row.appendChild(mode);
+    row.appendChild(lvl);
+    //Append row to table;
+    history.appendChild(row);
+
+
 }
