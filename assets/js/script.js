@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     //Add event listener to start button ,instructions paragraph and close button
-    document.getElementById("starter").addEventListener("click", startGame);
+    document.getElementById("starter").addEventListener("click", checkUsername);
     let instr = document.getElementById("instructions");
     instr.previousElementSibling.addEventListener("click", showInstructions);
     instr.children[1].addEventListener("click", hideInstructions);
@@ -44,6 +44,25 @@ function startGame() {
         //Makes history visible
         document.getElementById("history-container").style.display = "block";
         firstTime = false;
+    }
+}
+
+/**Checks if the username its valid and get it */
+function checkUsername() {
+    let guest = document.getElementById("guest").checked;
+    let username = document.getElementById("username").value;
+    if (guest || username !== "") {
+        let playerName = document.getElementById("player-name");
+        if (guest) {
+            let random = Math.floor(Math.random() * 1000);
+            playerName.innerText = "Guest#" + random;
+        } else {
+            playerName.innerText = username;
+        }
+        startGame();
+    } else {
+        document.getElementById("username").focus();
+        document.getElementById("username").placeholder = "Insert a valid username";
     }
 }
 
@@ -327,6 +346,8 @@ function endGame() {
     enablePicks();
     //Hide history
     hideHistory();
+    //Reset placeholder value
+    document.getElementById("username").placeholder = "Username";
 }
 
 /**Updates the text on the results div*/
