@@ -57,7 +57,7 @@ div.options-area {
 div.game-area,
 div#instructions,
 .options-area,
-#history {
+#history-container {
     display: none;
 }
 

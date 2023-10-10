@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let instr = document.getElementById("instructions");
     instr.previousElementSibling.addEventListener("click", showInstructions);
     instr.children[1].addEventListener("click", hideInstructions);
+    let hist = document.getElementById("history");
+    hist.previousElementSibling.addEventListener("click", showHistory);
+    hist.children[1].addEventListener("click", hideHistory);
 });
 
 //Global var to check if its the first time that the user starts the game
@@ -39,7 +42,7 @@ function startGame() {
             console.log(option);
         }
         //Makes history visible
-        document.getElementById("history").style.display = "block";
+        document.getElementById("history-container").style.display = "block";
         firstTime = false;
     }
 }
@@ -247,7 +250,17 @@ function hideInstructions() {
 
     document.getElementById("instructions").style.display = "none";
 }
+/**Shows the history when the user clicks on the paragraph*/
+function showHistory() {
 
+    document.getElementById("history").style.display = "block";
+}
+
+/**Hide the history when the user clicks on the close button*/
+function hideHistory() {
+
+    document.getElementById("history").style.display = "none";
+}
 function gameOverCountdown() {
     let time = 2;
     let gOverMsg = document.getElementById("game-over");
@@ -312,6 +325,8 @@ function endGame() {
     removeHighlight();
     //Enable the picks buttons
     enablePicks();
+    //Hide history
+    hideHistory();
 }
 
 /**Updates the text on the results div*/
