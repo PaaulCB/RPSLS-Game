@@ -364,21 +364,24 @@ function endGame() {
 
 /**Updates the text on the results div*/
 function updateResults() {
-
+    let username = document.getElementById("player-name").innerText;
     let history = document.getElementById("history-table");
     let pScore = document.getElementById("player-score").innerText;
     let cpuScore = document.getElementById("cpu-score").innerText;
     //Create row
     let row = document.createElement("tr");
     //Create cells
+    let player = document.createElement("td");
     let score = document.createElement("td");
     let mode = document.createElement("td");
     let lvl = document.createElement("td");
     //Add data to cells
+    player.innerHTML = username;
     score.innerHTML = `${pScore} - ${cpuScore}`;
     mode.innerHTML = getMode();
     lvl.innerHTML = getDifficulty();
     //Append cells to row
+    row.appendChild(player);
     row.appendChild(score);
     row.appendChild(mode);
     row.appendChild(lvl);
