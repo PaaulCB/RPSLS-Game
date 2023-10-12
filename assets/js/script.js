@@ -72,6 +72,7 @@ function checkUsername() {
 function guestToggle() {
     if (document.getElementById("guest").checked) {
         document.getElementById("username").style.display = "none";
+        document.getElementById("invalid-user-msg").style.display = "none";
         document.getElementById("username").value = "";
     } else {
         document.getElementById("username").style.display = "block";
