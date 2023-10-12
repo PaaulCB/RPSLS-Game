@@ -57,7 +57,8 @@ div.options-area {
 div.game-area,
 div#instructions,
 .options-area,
-#history-container {
+#history-container,
+#invalid-user-msg {
     display: none;
 }
 

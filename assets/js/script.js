@@ -52,7 +52,7 @@ function startGame() {
 function checkUsername() {
     let guest = document.getElementById("guest").checked;
     let username = document.getElementById("username").value;
-    if (guest || username !== "") {
+    if (guest || validateUsername() === true) {
         let playerName = document.getElementById("player-name");
         if (guest) {
             let random = Math.floor(Math.random() * 1000);
@@ -75,6 +75,21 @@ function guestToggle() {
     } else {
         document.getElementById("username").style.display = "block";
         document.getElementById("username").focus();
+    }
+}
+
+/**Check if the username its valid and update the error message */
+function validateUsername() {
+    let user = document.getElementById("username").value;
+    let msg = document.getElementById("invalid-user-msg");
+    if (user.length < 4 || user.length > 14) {
+        msg.style.display = "block";
+        msg.innerText = "Username needs to have 4-14 characters";
+        return false;
+    } else {
+        msg.style.display = "";
+        msg.innerText = "";
+        return true;
     }
 }
 
