@@ -52,7 +52,7 @@ function startGame() {
 function checkUsername() {
     let guest = document.getElementById("guest").checked;
     let username = document.getElementById("username").value;
-    if (guest || validateUsername() === true) {
+    if (guest || validateUsername()) {
         let playerName = document.getElementById("player-name");
         if (guest) {
             let random = Math.floor(Math.random() * 1000);
@@ -63,6 +63,7 @@ function checkUsername() {
         startGame();
     } else {
         document.getElementById("username").focus();
+        document.getElementById("username").value = "";
         document.getElementById("username").placeholder = "Insert a valid username";
     }
 }
