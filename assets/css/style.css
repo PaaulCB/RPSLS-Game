@@ -1,8 +1,14 @@
-h1 {
-    text-align: center;
+body {
+    background-color: #C2E7DA;
 }
 
-/*Game menu layout*/
+h1 {
+    text-align: center;
+    color: #091620;
+    text-shadow: 1px 1px 1px #7A5980;
+}
+
+/*Game menu layout and styles*/
 div.game-menu {
     display: grid;
     place-items: center;
@@ -11,6 +17,86 @@ div.game-menu {
 
 .game-menu * {
     text-align: center;
+}
+
+/*Start game button*/
+button#starter {
+    background-color: #7A5980;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 5px;
+    border-radius: 5px;
+    color: #C2E7DA;
+    padding-bottom: 2.5px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+button#starter:hover {
+    background-color: #402639;
+}
+
+/*Username input*/
+#username {
+    background-color: #C2E7DA;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#username:focus {
+    /*Remove default styles*/
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border: 2px solid black;
+}
+
+p#invalid-user-msg {
+    color: #db5c5c;
+    margin: 1px;
+    font-size: 0.8rem;
+}
+
+/*guest checkbox*/
+input#guest {
+    accent-color: #C2E7DA;
+    color: #C2E7DA;
+    outline: 1px solid black;
+}
+
+p.selector {
+    margin-bottom: 1px;
+}
+
+input[type="radio"] {
+    accent-color: #410e81;
+}
+
+/*History table*/
+table#history-table {
+    color: black;
+    border-collapse: collapse;
+}
+
+thead>tr {
+    border: 1px solid;
+    font-size: 20px;
+}
+
+tbody td {
+    border-bottom: 1px solid;
+}
+
+/*Close buttons*/
+button.close {
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #C2E7DA;
+    background-color: #7A5980;
+    margin: 1vh;
+    border-radius: 10px;
 }
 
 /*Game area layout*/

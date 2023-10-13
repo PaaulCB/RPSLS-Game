@@ -23,11 +23,14 @@
         <button id="starter">Start game!</button>
         <input type="text" placeholder="Username" id="username" />
         <p id="invalid-user-msg"></p>
-        <input type="checkbox" id="guest" name="guest" value="guest" />
-        <label for="guest"> Play as guest</label>
+        <div>
+          <input type="checkbox" id="guest" name="guest" value="guest" />
+          <label for="guest"> Play as guest</label>
+        </div>
+
         <!--Difficulty selector-->
         <div id="difficulty-selector">
-          <p>Choose difficulty</p>
+          <p class="selector">Choose difficulty</p>
           <input
             type="radio"
             id="lvl-one"
@@ -43,7 +46,7 @@
         </div>
         <!--Mode selector-->
         <div id="mode-selector">
-          <p>Choose game mode</p>
+          <p class="selector">Choose game mode</p>
           <input
             type="radio"
             id="best-of-three"
@@ -63,21 +66,23 @@
           <div id="history">
             <table id="history-table">
               <thead>
-                <th>Username</th>
-                <th>Score</th>
-                <th>Mode</th>
-                <th>Lvl</th>
+                <tr>
+                  <th>Username</th>
+                  <th>Score</th>
+                  <th>Mode</th>
+                  <th>Lvl</th>
+                </tr>
               </thead>
               <tbody></tbody>
             </table>
-            <button>X</button>
+            <button class="close">X</button>
           </div>
         </div>
         <div>
           <p>How to play</p>
           <div id="instructions">
             <p>Instructions</p>
-            <button>X</button>
+            <button class="close">X</button>
           </div>
         </div>
       </div>
