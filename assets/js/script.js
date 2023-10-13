@@ -403,7 +403,7 @@ function updateResults() {
     row.appendChild(mode);
     row.appendChild(lvl);
     //Append row to table;
-    history.appendChild(row);
+    history.children[1].appendChild(row);
 
 
 }
