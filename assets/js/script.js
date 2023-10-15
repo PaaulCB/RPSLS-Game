@@ -68,15 +68,24 @@ function checkUsername() {
     }
 }
 
-/**Show or hide username input*/
+/**Show or hide username input and change the layout on medium screens*/
 function guestToggle() {
+    let guest = document.getElementById("invalid-user-msg").nextElementSibling;
     if (document.getElementById("guest").checked) {
         document.getElementById("username").style.display = "none";
         document.getElementById("invalid-user-msg").style.display = "none";
         document.getElementById("username").value = "";
+        if (screen.width >= 768) {
+            guest.style.gridRowStart = "1";
+            guest.style.gridRowEnd = "3";
+        }
     } else {
         document.getElementById("username").style.display = "block";
         document.getElementById("username").focus();
+        if (screen.width >= 768) {
+            guest.style.gridRowStart = "2";
+            guest.style.gridRowEnd = "2";
+        }
     }
 }
 
