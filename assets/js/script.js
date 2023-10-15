@@ -397,6 +397,8 @@ function endGame() {
     enablePicks();
     //Hide history
     hideHistory();
+    //Hide instructions
+    hideInstructions();
     //Reset placeholder value
     document.getElementById("username").placeholder = "Username";
 }
