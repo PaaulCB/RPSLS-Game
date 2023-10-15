@@ -223,3 +223,62 @@ div#instructions,
 #game-over {
     visibility: hidden;
 }
+
+/*Medium screens*/
+@media screen and (min-width:768px) {
+
+    /*Menu layout*/
+    div.game-menu {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3vh;
+    }
+
+    button#starter {
+        grid-column-start: 2;
+        grid-row: span 2;
+        justify-self: left;
+        height: 50px;
+        margin-left: 30px;
+    }
+
+    #username {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        justify-self: right;
+        margin-right: 30px;
+    }
+
+    #invalid-user-msg+div {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        justify-self: right;
+        padding-right: 72px;
+    }
+
+    #difficulty-selector {
+        justify-self: right;
+        padding-right: 64px;
+        margin-top: 2vh;
+    }
+
+    #mode-selector {
+        justify-self: left;
+        margin-top: 2vh;
+        padding-left: 7px;
+    }
+
+    #instructions-container {
+        grid-column: span 2;
+    }
+
+    #instructions>div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #history-container {
+        grid-column: span 2;
+    }
+}
