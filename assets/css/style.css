@@ -32,7 +32,7 @@ button#starter {
 }
 
 button#starter:hover {
-    background-color: #402639;
+    background-color: #5c3c62;
 }
 
 /*Username input*/
@@ -97,6 +97,10 @@ button.close {
     background-color: #7A5980;
     margin: 1vh;
     border-radius: 10px;
+}
+
+button.close:hover {
+    background-color: #5c3c62;
 }
 
 div#history-container>p,
