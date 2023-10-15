@@ -78,6 +78,8 @@ function guestToggle() {
         if (screen.width >= 768) {
             guest.style.gridRowStart = "1";
             guest.style.gridRowEnd = "3";
+        } else {
+            guest.style.gridRowStart = "3";
         }
     } else {
         document.getElementById("username").style.display = "block";
@@ -85,6 +87,8 @@ function guestToggle() {
         if (screen.width >= 768) {
             guest.style.gridRowStart = "2";
             guest.style.gridRowEnd = "2";
+        } else {
+            guest.style.gridRowStart = "3";
         }
     }
 }
