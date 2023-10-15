@@ -342,10 +342,10 @@ function checkGameOver() {
     console.log(getMode());
     switch (getMode()) {
         case "BO3":
-            pScore === 3 || cpuScore === 3 ? gOver = true : gOver = false;
+            pScore === 2 || cpuScore === 2 ? gOver = true : gOver = false;
             break;
         case "BO5":
-            pScore === 5 || cpuScore === 5 ? gOver = true : gOver = false;
+            pScore === 3 || cpuScore === 3 ? gOver = true : gOver = false;
             break;
         case "Until5":
             cpuScore === 5 ? gOver = true : gOver = false;
