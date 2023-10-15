@@ -21,9 +21,11 @@
       <!--Game menu-->
       <div class="game-menu">
         <button id="starter">Start game!</button>
-        <input type="text" placeholder="Username" id="username" />
-        <p id="invalid-user-msg"></p>
-        <div>
+        <div id="username-container">
+          <input type="text" placeholder="Username" id="username" />
+          <p id="invalid-user-msg"></p>
+        </div>
+        <div id="guest-container">
           <input type="checkbox" id="guest" name="guest" value="guest" />
           <label for="guest"> Play as guest</label>
         </div>

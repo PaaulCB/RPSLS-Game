@@ -70,7 +70,7 @@ function checkUsername() {
 
 /**Show or hide username input and change the layout on medium screens*/
 function guestToggle() {
-    let guest = document.getElementById("invalid-user-msg").nextElementSibling;
+    let guest = document.getElementById("guest-container");
     if (document.getElementById("guest").checked) {
         document.getElementById("username").style.display = "none";
         document.getElementById("invalid-user-msg").style.display = "none";
