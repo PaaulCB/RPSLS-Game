@@ -107,6 +107,7 @@ div#history-container>p,
 div#instructions-container>p {
     color: #7A5980;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /*Game area layout*/

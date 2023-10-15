@@ -289,8 +289,12 @@ function updatePicks(player, cpu) {
 
 /**Shows the instruccions when the user clicks on the paragraph*/
 function showInstructions() {
-
-    document.getElementById("instructions").style.display = "block";
+    let instr = document.getElementById("instructions");
+    if (instr.style.display === "block") {
+        hideInstructions();
+    } else {
+        instr.style.display = "block";
+    }
 }
 
 /**Hide the instruccions when the user clicks on the close button*/
@@ -301,7 +305,12 @@ function hideInstructions() {
 /**Shows the history when the user clicks on the paragraph*/
 function showHistory() {
 
-    document.getElementById("history").style.display = "block";
+    let history = document.getElementById("history");
+    if (history.style.display === "block") {
+        hideHistory();
+    } else {
+        history.style.display = "block";
+    }
 }
 
 /**Hide the history when the user clicks on the close button*/
