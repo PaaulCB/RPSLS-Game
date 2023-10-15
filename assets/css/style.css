@@ -152,6 +152,14 @@ div.options-area {
     margin-top: 1rem;
 }
 
+div#player-area {
+    justify-self: right;
+}
+
+div#cpu-area {
+    justify-self: left;
+}
+
 /*Game options styles*/
 .option i {
     font-size: 4rem;
@@ -311,4 +319,5 @@ div#instructions,
         padding: 0;
         font-size: 1.5rem;
     }
+
 }
