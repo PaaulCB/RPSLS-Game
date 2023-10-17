@@ -8,11 +8,19 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: #C2E7DA;
     font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
     ;
 }
 
+main {
+    flex: 1;
+}
+
+/*Header*/
 header {
     background-color: #7ed0b3
 }
@@ -246,6 +254,20 @@ div#game-over {
     font-weight: bold;
     padding-top: 2rem;
     font-size: 1.2rem;
+}
+
+/*Footer*/
+#social-networks {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: #7ed0b3;
+}
+
+#social-networks i {
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px #7A5980;
+    color: #091620;
 }
 
 /*Hide game area and instructions*/
