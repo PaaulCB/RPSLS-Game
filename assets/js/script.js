@@ -81,7 +81,7 @@ function guestToggle() {
             guest.style.gridRowStart = "3";
         }
     } else {
-        document.getElementById("username").style.display = "block";
+        document.getElementById("username").style.display = "inline-block";
         document.getElementById("username").focus();
         if (screen.width >= 768) {
             guest.style.gridRowStart = "2";

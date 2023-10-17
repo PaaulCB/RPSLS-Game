@@ -22,7 +22,10 @@ main {
 
 /*Header*/
 header {
-    background-color: #7ed0b3
+    background-color: #7ed0b3;
+    padding-top: 5px;
+    padding-bottom: 13px;
+    margin-bottom: 18px;
 }
 
 h1 {
@@ -31,6 +34,7 @@ h1 {
     text-shadow: 2px 2px 2px #7A5980;
     font-family: 'Paytone One', sans-serif;
     letter-spacing: 5px;
+    font-size: 2.4rem;
 }
 
 #username,
@@ -60,7 +64,7 @@ button#starter {
     background-color: #7A5980;
     font-weight: bold;
     font-size: 1.4rem;
-    margin: 5px;
+    margin-bottom: 13px;
     padding: 5px;
     border-radius: 5px;
     color: #C2E7DA;
@@ -80,7 +84,9 @@ button#starter:hover {
     border-radius: 5px;
     color: black;
     font-weight: bold;
-    margin-top: 5px;
+    padding: 0 10px;
+    height: 30px;
+    justify-self: center;
 }
 
 #username:focus {
@@ -104,27 +110,45 @@ input#guest {
     outline: 1px solid black;
 }
 
+#guest+label {
+    font-size: 0.9rem;
+}
+
 p.selector {
     margin-bottom: 1px;
+    padding-top: 15px;
+    font-weight: bold;
 }
 
 input[type="radio"] {
     accent-color: #410e81;
 }
 
+input[type="radio"]+label {
+    font-size: 0.9rem;
+}
+
 /*History table*/
 table#history-table {
     color: black;
     border-collapse: collapse;
+    margin-top: 8px;
 }
 
 thead>tr {
     border: 1px solid;
-    font-size: 20px;
+    font-size: 0.9rem;
+    padding: 0 10px;
+
+}
+
+thead>tr th {
+    padding: 0 10px;
 }
 
 tbody td {
     border-bottom: 1px solid;
+    font-size: 0.8rem;
 }
 
 /*Close buttons*/
@@ -133,8 +157,9 @@ button.close {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: #C2E7DA;
     background-color: #7A5980;
-    margin: 1vh;
+    margin: 10px;
     border-radius: 10px;
+    padding: 2px 4px;
 }
 
 button.close:hover {
@@ -146,6 +171,20 @@ div#instructions-container>p {
     color: #7A5980;
     text-decoration: underline;
     cursor: pointer;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+#instructions>div>div span {
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+#instructions>div>div p {
+    font-size: 0.8rem;
 }
 
 /*Game area layout*/
@@ -258,14 +297,16 @@ div#game-over {
 
 /*Footer*/
 #social-networks {
+    height: 72px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 5px;
     background-color: #7ed0b3;
 }
 
 #social-networks i {
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-shadow: 2px 2px 2px #7A5980;
     color: #091620;
 }
