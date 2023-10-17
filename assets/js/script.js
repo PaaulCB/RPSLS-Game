@@ -36,11 +36,9 @@ function startGame() {
 
         for (let option of options) {
             let pick = option.getAttribute("data-option");
-            console.log(pick);
             option.addEventListener("click", function () {
                 checkWin(pick, cpuPick(pick));
             });
-            console.log(option);
         }
         //Makes history visible
         document.getElementById("history-container").style.display = "block";
@@ -55,7 +53,8 @@ function checkUsername() {
     if (guest || validateUsername()) {
         let playerName = document.getElementById("player-name");
         if (guest) {
-            let random = Math.floor(Math.random() * 1000);
+            let random = Math.floor(Math.random() * 99999 + 1);
+            random = fillZero(random);
             playerName.innerText = "Guest#" + random;
         } else {
             playerName.innerText = username;
@@ -352,7 +351,6 @@ function checkGameOver() {
     let pScore = parseInt(document.getElementById("player-score").innerText);
     let cpuScore = parseInt(document.getElementById("cpu-score").innerText);
     let gOver;
-    console.log(getMode());
     switch (getMode()) {
         case "BO3":
             pScore === 2 || cpuScore === 2 ? gOver = true : gOver = false;
@@ -370,6 +368,26 @@ function checkGameOver() {
     return gOver;
 }
 
+/*Fills with "0" if the number have less than 5 digits*/
+function fillZero(num) {
+    switch (num.toString().length) {
+        case 1:
+            return "0000" + num;
+            break;
+        case 2:
+            return "000" + num;
+            break;
+        case 3:
+            return "00" + num;
+            break;
+        case 4:
+            return "0" + num;
+            break;
+        default:
+            return num;
+
+    }
+}
 /**
  * Hides the game area and shows the game menu again, 
  * resets the scores and the picks and
