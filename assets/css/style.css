@@ -296,6 +296,10 @@ div#game-over {
 }
 
 /*Footer*/
+footer {
+    margin-top: 18px;
+}
+
 #social-networks {
     height: 72px;
     display: flex;
@@ -475,6 +479,101 @@ div#instructions,
 /*Larger screens*/
 @media screen and (min-width:1440px) {
 
+    /*Game menu*/
+    div.game-menu {
+        column-gap: 250px;
+    }
+
+    header {
+        padding-top: 0;
+        padding-bottom: 17px;
+        margin-bottom: 35px;
+    }
+
+    h1,
+    #social-networks i {
+        font-size: 4rem;
+    }
+
+    button#starter {
+        font-size: 2.3rem;
+        padding: 0px 10px;
+        height: 77px;
+        position: relative;
+        left: 2px;
+    }
+
+    .selector,
+    div#history-container>p,
+    div#instructions-container>p,
+    button.close {
+        font-size: 1.5rem;
+    }
+
+    #instructions>div>div span,
+    thead>tr {
+        font-size: 1.3rem;
+    }
+
+    #username,
+    #guest+label,
+    #instructions>div>div p,
+    tbody td,
+    input[type="radio"]+label {
+        font-size: 1.1rem;
+    }
+
+    p#invalid-user-msg {
+        font-size: 1rem;
+    }
+
+    #username {
+        height: 40px;
+        width: 300px;
+    }
+
+    #username-container {
+        position: relative;
+        left: 28px;
+    }
+
+    #guest-container {
+        position: relative;
+        right: 42px;
+    }
+
+    p.selector,
+    div#history-container>p,
+    div#instructions-container>p {
+        padding-top: 18px;
+    }
+
+    table#history-table,
+    #instructions>div>div span {
+        margin-top: 30px;
+    }
+
+    thead>tr th {
+        padding: 0 45px;
+    }
+
+    button.close {
+        padding: 3px 12px;
+        border-radius: 19px;
+    }
+
+    #instructions>div {
+        column-gap: 60px;
+    }
+
+    #social-networks {
+        height: 106px;
+    }
+
+    footer {
+        margin-top: 35px;
+    }
+
     /*Game area*/
     div.options-area {
         grid-column: span 3;
@@ -518,7 +617,4 @@ div#instructions,
         font-size: 1.7rem;
     }
 
-    h1 {
-        font-size: 4rem;
-    }
 }
