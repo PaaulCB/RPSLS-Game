@@ -157,9 +157,9 @@ button.close {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: #C2E7DA;
     background-color: #7A5980;
-    margin: 10px;
+    margin-top: 10px;
     border-radius: 10px;
-    padding: 2px 4px;
+    padding: 2px 5px;
 }
 
 button.close:hover {
@@ -331,15 +331,18 @@ div#instructions,
     /*Menu layout*/
     div.game-menu {
         grid-template-columns: 1fr 1fr;
-        column-gap: 3vh;
+        align-items: center;
+        column-gap: 90px;
     }
 
     button#starter {
         grid-column-start: 2;
         grid-row: span 2;
         justify-self: left;
-        height: 50px;
-        margin-left: 30px;
+        height: 62px;
+        font-size: 1.7rem;
+        position: relative;
+        left: 13px;
     }
 
     #username-container {
@@ -347,7 +350,12 @@ div#instructions,
         grid-row-start: 1;
         grid-row-end: 1;
         justify-self: right;
-        margin-right: 30px;
+        position: relative;
+        left: 38px;
+    }
+
+    #username {
+        width: 270px;
     }
 
     #guest-container {
@@ -355,19 +363,16 @@ div#instructions,
         grid-row-start: 2;
         grid-row-end: 2;
         justify-self: right;
-        padding-right: 72px;
+        position: relative;
+        right: 25px;
     }
 
     #difficulty-selector {
         justify-self: right;
-        padding-right: 64px;
-        margin-top: 2vh;
     }
 
     #mode-selector {
         justify-self: left;
-        margin-top: 2vh;
-        padding-left: 7px;
     }
 
     #instructions-container {
@@ -381,6 +386,59 @@ div#instructions,
 
     #history-container {
         grid-column: span 2;
+    }
+
+    thead>tr th {
+        padding: 0 25px;
+    }
+
+    h1,
+    #social-networks i {
+        font-size: 3rem;
+    }
+
+    .selector,
+    div#history-container>p,
+    div#instructions-container>p,
+    button.close {
+        font-size: 1.2rem;
+    }
+
+    #instructions>div>div span,
+    thead>tr {
+        font-size: 1.1rem;
+    }
+
+    #username,
+    #guest+label,
+    #instructions>div>div p,
+    tbody td,
+    input[type="radio"]+label {
+        font-size: 1rem;
+    }
+
+    p#invalid-user-msg {
+        font-size: 0.9rem;
+    }
+
+    p.selector,
+    div#history-container>p,
+    div#instructions-container>p {
+        padding-top: 12px;
+    }
+
+    table#history-table,
+    #instructions>div>div span {
+        margin-top: 20px;
+    }
+
+    button.close {
+        padding: 2px 8px;
+        border-radius: 15px;
+    }
+
+    #social-networks {
+        height: 85px;
     }
 
     /*Game area*/
