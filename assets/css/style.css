@@ -41,7 +41,7 @@ h1 {
 #invalid-user-msg,
 #difficulty-selector label,
 #mode-selector label,
-#instructions>div>div p,
+#instructions p,
 #vs,
 #game-over,
 tbody tr {
@@ -183,7 +183,7 @@ div#instructions-container>p {
     font-size: 0.9rem;
 }
 
-#instructions>div>div p {
+#instructions p {
     font-size: 0.8rem;
 }
 
@@ -262,6 +262,10 @@ div#cpu-area {
 #vs {
     height: 122px;
     display: grid;
+}
+
+div#vs :first-child {
+    text-shadow: 2px 2px 2px #7A5980;
     align-self: center;
 }
 
@@ -425,7 +429,7 @@ div#instructions,
         font-size: 1.2rem;
     }
 
-    #instructions>div>div span,
+    #instructions span,
     thead>tr {
         font-size: 1.1rem;
     }
@@ -467,8 +471,12 @@ div#instructions,
         font-size: 1.3rem;
     }
 
+    div#vs {
+        height: 170px;
+    }
+
     .option i {
-        font-size: 7rem;
+        font-size: 6rem;
     }
 
     #cpu-choise,
@@ -487,7 +495,6 @@ div#instructions,
     }
 
     div#game-over {
-        padding: 3rem;
         font-size: 1.5rem;
     }
 
@@ -607,6 +614,10 @@ div#instructions,
         font-size: 1.5rem;
     }
 
+    div#vs {
+        height: 183px;
+    }
+
     .option i {
         font-size: 8rem;
     }
@@ -618,16 +629,16 @@ div#instructions,
 
     #cpu-choise,
     #player-choise {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
 
     .highlight {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         font-weight: bold;
     }
 
     .highlight div>i {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 
     div#game-over {
