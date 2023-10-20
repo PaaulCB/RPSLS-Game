@@ -98,9 +98,9 @@ function guestToggle() {
 function validateUsername() {
     let user = document.getElementById("username").value;
     let msg = document.getElementById("invalid-user-msg");
-    if (user.length < 4 || user.length > 14) {
+    if (user.length < 4 || user.length > 11) {
         msg.style.display = "block";
-        msg.innerText = "Username needs to have 4-14 characters";
+        msg.innerText = "Username needs to have 4-11 characters";
         return false;
     } else {
         msg.style.display = "";
