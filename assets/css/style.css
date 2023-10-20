@@ -104,13 +104,66 @@ p#invalid-user-msg {
 }
 
 /*guest checkbox*/
+#guest-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 input#guest {
     accent-color: #C2E7DA;
     color: #C2E7DA;
     outline: 1px solid black;
+    /* Hide the browser's default checkbox */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
-#guest+label {
+/*Custom checkbox*/
+.checkmark {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #00000080;
+    background-color: #C2E7DA;
+}
+
+/* On mouse-over, change border color*/
+#guest-container:hover input~.checkmark {
+    border-color: #000;
+}
+
+/* Create the checkmark(hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: relative;
+    left: 4px;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+#guest-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark*/
+#guest-container .checkmark:after {
+    width: 4px;
+    height: 8px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#guest-container {
     font-size: 0.9rem;
 }
 
@@ -435,7 +488,7 @@ div#instructions,
     }
 
     #username,
-    #guest+label,
+    #guest-container,
     #instructions>div>div p,
     tbody td,
     input[type="radio"]+label {
@@ -540,7 +593,7 @@ div#instructions,
     }
 
     #username,
-    #guest+label,
+    #guest-container,
     #instructions>div>div p,
     tbody td,
     input[type="radio"]+label {
