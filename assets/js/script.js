@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hist.previousElementSibling.addEventListener("click", showHistory);
     hist.children[1].addEventListener("click", hideHistory);
     document.getElementById("guest").addEventListener("change", guestToggle);
+    window.addEventListener("resize", checkHighlight);
 });
 
 //Global var to check if its the first time that the user starts the game
@@ -25,7 +26,8 @@ function startGame() {
     //Hides the game menu
     let gameMenu = document.getElementsByClassName("game-menu")[0];
     gameMenu.style.display = "none";
-
+    //Center the cpu area
+    centerCpu();
     //Add event listener to the option buttons only if is the first time
     //that starts the game
     if (firstTime) {
@@ -330,6 +332,23 @@ function hideHistory() {
 
     document.getElementById("history").style.display = "none";
 }
+/**Check if the element has the highlight class */
+function checkHighlight() {
+    let highlight = document.getElementById("player-area").classList;
+    if (highlight.contains("highlight")) {
+        removeHighlight();
+        centerCpu();
+        highlight.add("highlight");
+    } else {
+        centerCpu();
+    }
+}
+/**Center the cpu-area on the game area */
+function centerCpu() {
+    let playerWidth = document.getElementById("player-area").offsetWidth;
+    document.getElementById("cpu-area").style.width = playerWidth + "px";
+}
+
 function gameOverCountdown() {
     let time = 2;
     let gOverMsg = document.getElementById("game-over");
