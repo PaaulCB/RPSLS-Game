@@ -70,6 +70,7 @@ button#starter {
     color: #C2E7DA;
     padding-bottom: 2.5px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    cursor: pointer;
 }
 
 
@@ -213,6 +214,7 @@ button.close {
     margin-top: 10px;
     border-radius: 10px;
     padding: 2px 5px;
+    cursor: pointer;
 }
 
 button.close:hover {
@@ -330,6 +332,7 @@ div#vs :first-child {
     border: 5px solid #7A5980;
     background-color: #C2E7DA;
     color: #7A5980;
+    cursor: pointer;
 
 }
 
@@ -343,6 +346,7 @@ div#vs :first-child {
 .option:disabled {
     border: 5px solid #7A598080;
     color: #7A598080;
+    cursor: not-allowed;
 }
 
 .option:disabled:hover {
