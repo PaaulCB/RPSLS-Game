@@ -210,7 +210,7 @@ p.selector {
     border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
+/* On mouse-over, change the border color */
 .radio-container:hover input~.radio-dot {
     border-color: #5c3c62;
 }
