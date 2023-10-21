@@ -31,36 +31,65 @@
         >
 
         <!--Difficulty selector-->
-        <div id="difficulty-selector">
+        <div id="difficulty-selector" class="selector-container">
           <p class="selector">Choose difficulty</p>
-          <input
-            type="radio"
-            id="lvl-one"
-            name="difficulty"
-            value="1"
-            checked
-          />
-          <label for="lvl-one">1</label>
-          <input type="radio" id="lvl-two" name="difficulty" value="2" />
-          <label for="lvl-two">2</label>
-          <input type="radio" id="lvl-three" name="difficulty" value="3" />
-          <label for="lvl-three">3</label>
+
+          <label for="lvl-one" class="radio-container"
+            ><input
+              type="radio"
+              id="lvl-one"
+              name="difficulty"
+              value="1"
+              checked
+            /><span class="radio-dot"></span>1</label
+          >
+          <label for="lvl-two" class="radio-container"
+            ><input
+              type="radio"
+              id="lvl-two"
+              name="difficulty"
+              value="2"
+            /><span class="radio-dot"></span>2</label
+          >
+
+          <label for="lvl-three" class="radio-container"
+            ><input
+              type="radio"
+              id="lvl-three"
+              name="difficulty"
+              value="3"
+            /><span class="radio-dot"></span>3</label
+          >
         </div>
         <!--Mode selector-->
-        <div id="mode-selector">
+        <div id="mode-selector" class="selector-container">
           <p class="selector">Choose game mode</p>
-          <input
-            type="radio"
-            id="best-of-three"
-            name="mode"
-            value="BO3"
-            checked
-          />
-          <label for="best-of-five">BO3</label>
-          <input type="radio" id="best-of-five" name="mode" value="BO5" />
-          <label for="best-of-five">BO5</label>
-          <input type="radio" id="lose-five" name="mode" value="Until5" />
-          <label for="lose-five">Until5</label>
+
+          <label for="best-of-five" class="radio-container"
+            ><input
+              type="radio"
+              id="best-of-three"
+              name="mode"
+              value="BO3"
+              checked
+            /><span class="radio-dot"></span>BO3</label
+          >
+          <label for="best-of-five" class="radio-container"
+            ><input
+              type="radio"
+              id="best-of-five"
+              name="mode"
+              value="BO5"
+            /><span class="radio-dot"></span>BO5</label
+          >
+          <label for="lose-five" class="radio-container"
+            ><input
+              type="radio"
+              id="lose-five"
+              name="mode"
+              value="Until5"
+            /><span class="radio-dot"></span>Until5</label
+          >
         </div>
         <!--Results from last game-->
         <div id="history-container">

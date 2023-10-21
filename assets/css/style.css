@@ -59,6 +59,11 @@ div.game-menu {
     text-align: center;
 }
 
+.selector-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 /*Start game button*/
 button#starter {
     background-color: #7A5980;
@@ -172,14 +177,70 @@ p.selector {
     margin-bottom: 1px;
     padding-top: 15px;
     font-weight: bold;
+    grid-column: span 3;
 }
 
-input[type="radio"] {
-    accent-color: #410e81;
-}
-
-input[type="radio"]+label {
+/* The container */
+.radio-container {
     font-size: 0.9rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: default;
+}
+
+/* Create a custom radio button */
+.radio-dot {
+    display: inline-block;
+    position: relative;
+    right: 5px;
+    top: 4px;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #7A5980;
+    background-color: #C2E7DA;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input~.radio-dot {
+    border-color: #5c3c62;
+}
+
+/* Create the dot (hidden when not checked) */
+.radio-dot:after {
+    content: "";
+    position: relative;
+    top: 2px;
+    left: 2px;
+    display: none;
+}
+
+/* Show the dot when checked */
+.radio-container input:checked~.radio-dot:after {
+    display: block;
+}
+
+
+/* Style the dot */
+.radio-container .radio-dot:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7A5980;
+}
+
+/* Change the color of the dot when hover the checked radio*/
+.radio-container:hover input:checked~.radio-dot:after {
+    background-color: #5c3c62;
 }
 
 /*History table*/
@@ -495,7 +556,7 @@ div#instructions,
     #guest-container,
     #instructions>div>div p,
     tbody td,
-    input[type="radio"]+label {
+    .radio-container {
         font-size: 1rem;
     }
 
@@ -600,7 +661,7 @@ div#instructions,
     #guest-container,
     #instructions>div>div p,
     tbody td,
-    input[type="radio"]+label {
+    .radio-container {
         font-size: 1.1rem;
     }
 
