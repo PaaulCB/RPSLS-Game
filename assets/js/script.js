@@ -81,7 +81,8 @@ function guestToggle() {
             guest.style.gridRowStart = "1";
             guest.style.gridRowEnd = "3";
         } else {
-            guest.style.gridRowStart = "3";
+            guest.style.gridRowStart = "2";
+            guest.style.gridRowEnd = "2";
         }
     } else {
         document.getElementById("username").style.display = "inline-block";
@@ -91,6 +92,7 @@ function guestToggle() {
             guest.style.gridRowEnd = "2";
         } else {
             guest.style.gridRowStart = "3";
+            guest.style.gridRowEnd = "3";
         }
     }
 }
@@ -103,7 +105,8 @@ function guestLayout() {
             guest.style.gridRowStart = "1";
             guest.style.gridRowEnd = "3";
         } else {
-            guest.style.gridRowStart = "3";
+            guest.style.gridRowStart = "2";
+            guest.style.gridRowEnd = "2";
         }
     } else {
         if (screen.width >= 768) {
