@@ -77,7 +77,7 @@ function guestToggle() {
         document.getElementById("username").style.display = "none";
         document.getElementById("invalid-user-msg").style.display = "none";
         document.getElementById("username").value = "";
-        if (screen.width >= 768) {
+        if (window.innerWidth >= 768) {
             guest.style.gridRowStart = "1";
             guest.style.gridRowEnd = "3";
         } else {
@@ -87,7 +87,7 @@ function guestToggle() {
     } else {
         document.getElementById("username").style.display = "inline-block";
         document.getElementById("username").focus();
-        if (screen.width >= 768) {
+        if (window.innerWidth >= 768) {
             guest.style.gridRowStart = "2";
             guest.style.gridRowEnd = "2";
         } else {
@@ -101,7 +101,7 @@ function guestLayout() {
 
     let guest = document.getElementById("guest-container");
     if (document.getElementById("guest").checked) {
-        if (screen.width >= 768) {
+        if (window.innerWidth >= 768) {
             guest.style.gridRowStart = "1";
             guest.style.gridRowEnd = "3";
         } else {
@@ -109,7 +109,7 @@ function guestLayout() {
             guest.style.gridRowEnd = "2";
         }
     } else {
-        if (screen.width >= 768) {
+        if (window.innerWidth >= 768) {
             guest.style.gridRowStart = "2";
             guest.style.gridRowEnd = "2";
         } else {
