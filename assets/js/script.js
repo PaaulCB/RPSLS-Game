@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hist.children[1].addEventListener("click", hideHistory);
     document.getElementById("guest").addEventListener("change", guestToggle);
     window.addEventListener("resize", checkHighlight);
+    window.addEventListener("resize", guestLayout);
 });
 
 //Global var to check if its the first time that the user starts the game
@@ -93,7 +94,27 @@ function guestToggle() {
         }
     }
 }
+/**Update the layout accordly to the current screen size*/
+function guestLayout() {
 
+    let guest = document.getElementById("guest-container");
+    if (document.getElementById("guest").checked) {
+        if (screen.width >= 768) {
+            guest.style.gridRowStart = "1";
+            guest.style.gridRowEnd = "3";
+        } else {
+            guest.style.gridRowStart = "3";
+        }
+    } else {
+        if (screen.width >= 768) {
+            guest.style.gridRowStart = "2";
+            guest.style.gridRowEnd = "2";
+        } else {
+            guest.style.gridRowStart = "3";
+            guest.style.gridRowEnd = "3";
+        }
+    }
+}
 /**Check if the username its valid and update the error message */
 function validateUsername() {
     let user = document.getElementById("username").value;
