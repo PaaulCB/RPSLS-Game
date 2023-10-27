@@ -1,7 +1,7 @@
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function () {
 
-    //Add event listener to start button ,instructions paragraph and close button
+    //Add event listeners
     document.getElementById("starter").addEventListener("click", checkUsername);
     let instr = document.getElementById("instructions");
     instr.previousElementSibling.addEventListener("click", showInstructions);
@@ -49,7 +49,7 @@ function startGame() {
     }
 }
 
-/**Checks if the username its valid and get it */
+/**Check if the username it's valid and get it */
 function checkUsername() {
     let guest = document.getElementById("guest").checked;
     let username = document.getElementById("username").value;
@@ -133,7 +133,7 @@ function validateUsername() {
     }
 }
 
-/**Gets the game difficulty*/
+/**Get the game difficulty*/
 function getDifficulty() {
 
     let difficulties = document.getElementsByName("difficulty");
@@ -144,7 +144,7 @@ function getDifficulty() {
     }
 }
 
-/**Gets the game mode*/
+/**Get the game mode*/
 function getMode() {
 
     let modes = document.getElementsByName("mode");
@@ -154,12 +154,12 @@ function getMode() {
         }
     }
 }
-/**Gets the cpu pick depending on the game difficulty */
+/**Get the cpu pick depending on the game difficulty */
 function cpuPick(pick) {
 
     let randomPick = gamePicks[Math.floor(Math.random() * 5)];
     switch (getDifficulty()) {
-        //If the difficulty is 1, 25% of the times will pick a lossing option
+        //If the difficulty is 1, 25% of the times will pick a loosing option
         case "1":
             if ((Math.random() * 100 + 1) <= 25) {
                 return specialPick(pick, "lose");
@@ -208,7 +208,7 @@ function specialPick(player, type) {
     }
 
 }
-/**Disables the picks buttons */
+/**Disable the picks buttons */
 function disablePicks() {
     let options = document.getElementsByClassName("option");
 
@@ -216,7 +216,7 @@ function disablePicks() {
         option.disabled = true;
     }
 }
-/**Enables the picks buttons */
+/**Enable the picks buttons */
 function enablePicks() {
     let options = document.getElementsByClassName("option");
 
@@ -226,7 +226,7 @@ function enablePicks() {
 }
 
 /**
- * Checks the wins between player and cpu picks
+ * Check the wins between player and cpu picks
  * For this function we use the same principle 
  * that we use on specialPick function, items with 
  * +1 and +3 index loses agains the pick and items with
@@ -255,21 +255,21 @@ function checkWin(player, cpu) {
         updateLose();
     }
 
-    //Sets buttons cooldown
+    //Set buttons cooldown
     disablePicks();
-    //Checks if the game its over
+    //Check if the game its over
     if (checkGameOver()) {
         document.getElementById("game-over").style.visibility = "visible";
         gameOverCountdown();
         setTimeout(endGame, 3000);
     } else {
-        setTimeout(enablePicks, 1000);
+        setTimeout(enablePicks, 500);
     }
 
 
 }
 
-/**Updates the player score and shows a win message*/
+/**Update the player score and shows a win message*/
 function updateWin() {
     resultsMessage("win");
     document.getElementById("player-area").classList.add("highlight");
@@ -277,7 +277,7 @@ function updateWin() {
     document.getElementById("player-score").innerText = ++score;
 }
 
-/**Updates the cpu score and shows a lose message*/
+/**Update the cpu score and shows a lose message*/
 function updateLose() {
     resultsMessage("lose");
     document.getElementById("cpu-area").classList.add("highlight");
@@ -285,18 +285,18 @@ function updateLose() {
     document.getElementById("cpu-score").innerText = ++score;
 }
 
-/**Shows a tie message*/
+/**Show a tie message*/
 function tie() {
     resultsMessage();
 }
 
-/**Removes the highlight class */
+/**Remove the highlight class */
 function removeHighlight() {
     document.getElementById("player-area").classList.remove("highlight");
     document.getElementById("cpu-area").classList.remove("highlight");
 }
 
-/**Updates the round-result message and removes the highlight class*/
+/**Update the round-result message and removes the highlight class*/
 function resultsMessage(msg) {
     let result = document.getElementById("round-result");
     if (msg === "win") {
@@ -372,7 +372,7 @@ function centerCpu() {
     let playerWidth = document.getElementById("player-area").offsetWidth;
     document.getElementById("cpu-area").style.width = playerWidth + "px";
 }
-
+/**Show the countdown when the game its over */
 function gameOverCountdown() {
     let time = 2;
     let gOverMsg = document.getElementById("game-over");
@@ -411,7 +411,7 @@ function checkGameOver() {
     return gOver;
 }
 
-/*Fills with "0" if the number have less than 5 digits*/
+/*Fill with "0" if the number have less than 5 digits*/
 function fillZero(num) {
     switch (num.toString().length) {
         case 1:
@@ -432,27 +432,26 @@ function fillZero(num) {
     }
 }
 /**
- * Hides the game area and shows the game menu again, 
- * resets the scores and the picks and
- * updates the results div
+ * Hide the game area and show the game menu again, 
+ * and reset what is necessary for a new game
  */
 function endGame() {
 
-    //Hides the game area
+    //Hide the game area
     document.getElementsByClassName("game-area")[0].style.display = "none";
-    //Makes the game menu visible
+    //Make the game menu visible
     document.getElementsByClassName("game-menu")[0].style.display = "grid";
-    //Updates results
+    //Update results
     updateResults();
-    //Resets scores
+    //Reset scores
     document.getElementById("player-score").innerText = "0";
     document.getElementById("cpu-score").innerText = "0";
-    //Resets picks
+    //Reset picks
     document.getElementById("player-choise").innerText = "?";
     document.getElementById("cpu-choise").innerText = "?";
     //Delete round winner message
     document.getElementById("round-result").innerText = "";
-    //Removes highlight class
+    //Remove highlight class
     removeHighlight();
     //Enable the picks buttons
     enablePicks();
@@ -464,7 +463,7 @@ function endGame() {
     document.getElementById("username").placeholder = "Username";
 }
 
-/**Updates the text on the results div*/
+/**Update the text on the results div*/
 function updateResults() {
     let username = document.getElementById("player-name").innerText;
     let history = document.getElementById("history-table");
