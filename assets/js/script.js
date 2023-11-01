@@ -42,13 +42,28 @@ function startGame() {
             option.addEventListener("click", function () {
                 checkWin(pick, cpuPick(pick));
             });
+            option.addEventListener("click", addDisabledStyle);
         }
         //Makes history visible
         document.getElementById("history-container").style.display = "block";
         firstTime = false;
     }
 }
+/**Add disabled style class on smaller screens */
+function addDisabledStyle() {
+    console.log(window.innerWidth);
 
+    if (window.innerWidth < 768) {
+        let button = this.classList;
+        button.add("disabled-style");
+        setTimeout(removeDisableStyle, 500, button);
+    }
+}
+/**Remove the disabled-style class */
+function removeDisableStyle(button) {
+    console.log("funciona?");
+    button.remove("disabled-style");
+}
 /**Check if the username it's valid and get it */
 function checkUsername() {
     let guest = document.getElementById("guest").checked;

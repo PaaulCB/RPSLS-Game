@@ -405,24 +405,18 @@ div#vs :first-child {
 
 }
 
-.option:hover {
-    border: 5px solid #C2E7DA;
-    background-color: #7A5980;
-    color: #C2E7DA;
-    outline: 5px solid #7A5980;
-}
-
 .option:disabled {
     border: 5px solid #7A598080;
+    background-color: #C2E7DA;
     color: #7A598080;
     cursor: not-allowed;
 }
 
-.option:disabled:hover {
-    border: 5px solid #7A598080;
-    color: #7A598080;
-    background-color: #C2E7DA;
-    outline: none;
+.option:disabled.disabled-style {
+    border: 5px solid #C2E7DA;
+    background-color: #7A598080;
+    color: #C2E7DA;
+    outline: 5px solid #7A598080;
 }
 
 /*Round winner styles*/
@@ -612,6 +606,22 @@ div#instructions,
     #cpu-choise,
     #player-choise {
         font-size: 3rem;
+    }
+
+    /*Style hover picks buttons*/
+    .option:hover {
+        border: 5px solid #C2E7DA;
+        background-color: #7A5980;
+        color: #C2E7DA;
+        outline: 5px solid #7A5980;
+    }
+
+    /*Disabled style hover picks buttons*/
+    .option:disabled:hover {
+        border: 5px solid #7A598080;
+        color: #7A598080;
+        background-color: #C2E7DA;
+        outline: none;
     }
 
     /*Round winner styles*/
