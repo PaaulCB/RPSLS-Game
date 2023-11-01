@@ -61,7 +61,6 @@ function addDisabledStyle() {
 }
 /**Remove the disabled-style class */
 function removeDisableStyle(button) {
-    console.log("funciona?");
     button.remove("disabled-style");
 }
 /**Check if the username it's valid and get it */
@@ -411,13 +410,13 @@ function checkGameOver() {
     let gOver;
     switch (getMode()) {
         case "BO3":
-            pScore === 2 || cpuScore === 2 ? gOver = true : gOver = false;
+            gOver = pScore === 2 || cpuScore === 2 ? true : false;
             break;
         case "BO5":
-            pScore === 3 || cpuScore === 3 ? gOver = true : gOver = false;
+            gOver = pScore === 3 || cpuScore === 3 ? true : false;
             break;
         case "Until5":
-            cpuScore === 5 ? gOver = true : gOver = false;
+            gOver = cpuScore === 5 ? true : false;
             break;
         default:
             alert("Invalid game mode");
@@ -431,16 +430,12 @@ function fillZero(num) {
     switch (num.toString().length) {
         case 1:
             return "0000" + num;
-            break;
         case 2:
             return "000" + num;
-            break;
         case 3:
             return "00" + num;
-            break;
         case 4:
             return "0" + num;
-            break;
         default:
             return num;
 
