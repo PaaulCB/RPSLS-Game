@@ -38,16 +38,20 @@ function startGame() {
         let options = document.getElementsByClassName("option");
 
         for (let option of options) {
-            let pick = option.getAttribute("data-option");
-            option.addEventListener("click", function () {
-                checkWin(pick, cpuPick(pick));
-            });
-            option.addEventListener("click", addDisabledStyle);
+            asignClick(option);
         }
         //Makes history visible
         document.getElementById("history-container").style.display = "block";
         firstTime = false;
     }
+}
+/**Add event litseners to option buttons */
+function asignClick(option) {
+    let pick = option.getAttribute("data-option");
+    option.addEventListener("click", function () {
+        checkWin(pick, cpuPick(pick));
+    });
+    option.addEventListener("click", addDisabledStyle);
 }
 /**Add disabled style class on smaller screens */
 function addDisabledStyle() {
@@ -180,6 +184,7 @@ function cpuPick(pick) {
             } else {
                 return randomPick;
             }
+            break;
         //If the difficulty is 2 will pick a random option 
         case "2":
             return randomPick;
@@ -190,6 +195,7 @@ function cpuPick(pick) {
             } else {
                 return randomPick;
             }
+            break;
         default:
             alert("Error, invalid difficulty");
     }
