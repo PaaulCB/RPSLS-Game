@@ -10,6 +10,12 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 
 ### Existing Features
 
+- _Header_
+
+  - On the header the users can find the name of the game and also by clicking on it they go back to the top of the page.
+
+    ![Header](assets/images/header.jpg)
+
 - _Game menu_
 
   - The main purpose of the game menu it's to set up the game, check previous results and learn how to play.
@@ -72,7 +78,58 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 
     - _How to play_
 
-      - sdasda
+      - The purpose of this feature it's to show the instructions and the difference between the diferents game modes to the user.
+
+        ![How to play](assets/images/how-to-play.jpg)
+
+      - Once you click on how to play, the instructions will appear, once you click again on it or on the X button, the instruccions will hide.
+
+- _Game area_
+
+  - Here it's where the game its played. Inside the game area we have the features explained below:
+
+    - _Round results_
+
+      - The main purpose of the round results it's to show the users if they won the round or not.
+      - Here we have a player area and a cpu area where shows the names, current scores and the selected pick.
+      - Initially the scores are setted to 0 and the picks to "?".
+
+        ![Initial Score](assets/images/initial-score.jpg)
+
+      - Once they pick an option, a message will appear indicating if the win, lose or tie, along with a highlight style on the winner site. Also the socre it's updated.
+
+        ![Score after pick](assets/images/score-after-pick.jpg)
+
+    - _Pick buttons_
+
+      - This allow the users to pick thier options.
+
+        ![Buttons](assets/images/buttons.jpg)
+
+      - The buttons have a hover style on them, for medium and larger screens,and for smallers they have the syme style but in a on click event.
+
+        ![Buttons hover](assets/images/buttons-hover.jpg)
+
+      - Once they pick an option all the buttons will be disabled for 0.5 seconds to prevent clicking twice by mistake.
+
+        ![Buttons disabled](assets/images/buttons-disabled.jpg)
+
+      - Once the game finish the buttons will remain disabled until the users are sent to the game menu.
+
+    - _Gameover message_
+
+      - Once the game it's over, a 3 seconds countdown message will apper below the buttons to let the users know that the game it's over and that they are been sent back to the game menu.
+
+        ![Gameover message](assets/images/gameover-message.jpg)
+
+- _Footer_
+
+  - The footer includes links to Discord and Github game repository. Both of them opens a link in a new tab.
+
+    ![Footer](assets/images/footer.jpg)
+
+  - The github repository will allow the users to check the code used for this game.
+  - Discord will allow users to share keep connected by sharing they results and meeting others users that's play the game.
 
 ## Design
 
