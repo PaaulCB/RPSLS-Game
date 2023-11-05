@@ -141,6 +141,44 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 
 ### Manual testing
 
+- _Resizing_
+  - Resizing to the differents screen sizes it show the content as intended
+- _Header_
+  - Clicking the game title it goes back to the top of the page.
+- _Game area_
+  - Checking "Play as guest" delete the content on the username input and hides it. On medium and larger screens also center "Play as guest" to cover the space of the hidden input.
+  - Unchecking "Play as guest" shows the username input again and focus it.
+  - Clicking "Start game!" with "Play as guest" checked starts a game with a guest username.
+  - Clicking "Start game!" with a username that do not have between 4-11 characters will delete the content on the username input, will focus it, will show a error message below the input and will change the input placeholder text.
+  - Checking and unchecking "Play as guest" after the error message it's shown will hide the error message.
+  - Clicking "Start game!" with a valid username starts a game with that username.
+  - Clicking "Start game!" with difficulty "1" selected and mode "BO3" selected starts a "BO3" game with difficulty "1".
+  - Clicking "Start game!" with difficulty "1" selected and mode "BO5" selected starts a "BO5" game with difficulty "1".
+  - Clicking "Start game!" with difficulty "1" selected and mode "Until5" selected starts a "Until5" game with difficulty "1".
+  - Clicking "Start game!" with difficulty "2" selected and mode "BO3" selected starts a "BO3" game with difficulty "2".
+  - Clicking "Start game!" with difficulty "2" selected and mode "BO5" selected starts a "BO5" game with difficulty "2".
+  - Clicking "Start game!" with difficulty "2" selected and mode "Until5" selected starts a "Until5" game with difficulty "2".
+  - Clicking "Start game!" with difficulty "3" selected and mode "BO3" selected starts a "BO3" game with difficulty "3".
+  - Clicking "Start game!" with difficulty "3" selected and mode "BO5" selected starts a "BO5" game with difficulty "3".
+  - Clicking "Start game!" with difficulty "3" selected and mode "Until5" selected starts a "Until5" game with difficulty "3".
+  - Once the first game it's over "history" option will appear on the game menu, before that will be hidden.
+  - Clicking on "History" will show the history table with the information about the previous games.
+  - Clicking on "History" again or on the X button will close the history table.
+  - Clicking on "How to play" will show the game instructions.
+  - Clicking on "How to play" again or on the X button will hide the instructions.
+- _Game area_
+  - Clicking the rock button pick the rock for the user and shows it below the user score.
+  - Clicking the paper button pick the paper for the user and shows it below the user score.
+  - Clicking the scissor button pick the scissor for the user and shows it below the user score.
+  - Clicking the lizard button pick the lizard for the user and shows it below the user score.
+  - Clicking the spoke button pick the spoke for the user and shows it below the user score.
+  - When clicking any of the options:
+    - Disable all the buttons for 0.5 seconds.
+    - CPu pick will appear on the Cpu area.
+    - If the user wins, the user area it's highlighted, it score it's incresed and a winning message appears below "vs".
+    - If the user lose, the CPU area it's highlighted, it score it's incresed and a losing message appears below "vs".
+    - If it's a tie, remove the highlight style and show a tie message.
+    - If the game its over, disable the buttons for 3 seconds and shows a 3 seconds countdown message below the options that returns to the game menu when the countdown its over.
 ### Validator testing
 
 - _HTML_
