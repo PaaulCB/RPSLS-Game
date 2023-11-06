@@ -179,6 +179,7 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
     - If the user lose, the CPU area it's highlighted, it score it's incresed and a losing message appears below "vs".
     - If it's a tie, remove the highlight style and show a tie message.
     - If the game its over, disable the buttons for 3 seconds and shows a 3 seconds countdown message below the options that returns to the game menu when the countdown its over.
+
 ### Validator testing
 
 - _HTML_
@@ -199,9 +200,61 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 
 ### Deployment
 
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+1. In the GitHub repository, navigate to the Settings tab.
+
+   ![Settings](assets/images/settings.jpg)
+
+2. In the left menu go to **Pages**.
+
+   ![Pages](assets/images/pages.jpg)
+
+3. From the source section drop-down menu, select Deploy from a branch.
+
+   ![Branch](assets/images/branch.jpg)
+
+4. In the branch section select **main** and folder **/(root)**, then press save.
+
+   ![Main](assets/images/main.jpg)
+
+5. The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+   ![Deployed](assets/images/deploy.jpg)
+
 ### How to clone the repository
 
+1.  Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game)
+2.  Above the list of files, click **Code**.
+
+    ![Code](assets/images/clone-step-1.jpg)
+
+3.  Copy the URL for the repository.
+
+    ![URL](assets/images/clone-step-2.jpg)
+
+4.  Open Git Bash.
+5.  Change the current working directory to the location you want the cloned directory.
+6.  Type **git clone**, and then paste the URL you copied erlier.
+
+         git clone https://github.com/PaaulCB/RPSLS-Game.git
+
+7.  Press **Enter** to create your local clone.
+
+    ![Clone results](assets/images/clone-step-3.jpg)
+
 ### How to fork the repository
+
+1. Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game)
+2. In the top-right corner of the page, click **Fork**.
+
+   ![Fork](assets/images/fork.jpg)
+
+3. Under "Owner," select the dropdown menu and click an owner for the forked repository.
+4. By default, forks are named the same as their upstream repositories. Optionally, to further distinguish your fork, in the "Repository name" field, type a name.
+5. Optionally, in the "Description" field, type a description of your fork.
+6. Optionally, select **Copy the DEFAULT branch only**.
+7. Click **Create fork**.
 
 ## Credits
 
