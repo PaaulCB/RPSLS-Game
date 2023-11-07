@@ -1,10 +1,10 @@
 # RPSLS game
 
-RPSLS game it a site that wants to provide a challenging game to the useres who want to play a luck based game.
+RPSLS game it a site that wants to provide a challenging game to the users. The site will be targeted toward people who want to play a luck based game. RPSLS game its a fully responsive Javascript Rock-Paper-Scissors-Lizard-Spoke game that will allow users to play with their usernames, or as guests it they don't want to, on different game modes and difficulties.
 
 ![Website on different screens](assets/images/responsive.jpg)
 
-[RPSLS game](https://paaulcb.github.io/RPSLS-Game/)
+Link to the deployed site [here](https://paaulcb.github.io/RPSLS-Game/).
 
 ## Features
 
