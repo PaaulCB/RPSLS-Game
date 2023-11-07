@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     background-color: #C2E7DA;
     font-family: 'Roboto Mono', monospace;
+    /*Code to make the footer stay at the bottom of the page was taken from https: //stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b*/
     display: flex;
     flex-direction: column;
     ;
@@ -82,6 +83,7 @@ button#starter {
     border-radius: 5px;
     color: #C2E7DA;
     padding-bottom: 2.5px;
+    /*Code for this style was taken from https: //stackoverflow.com/questions/2570972/css-font-border*/
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     cursor: pointer;
 }
@@ -117,12 +119,15 @@ p#invalid-user-msg {
     font-size: 0.8rem;
 }
 
+/*Code to implement the custom radio buttons and checkbox was taken from https: //www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
 /*guest checkbox*/
-#guest-container {
+#guest-container,
+.radio-container {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 input#guest {
@@ -177,7 +182,8 @@ input#guest {
     transform: rotate(45deg);
 }
 
-#guest-container {
+#guest-container,
+.radio-container {
     font-size: 0.9rem;
 }
 
@@ -186,16 +192,6 @@ p.selector {
     padding-top: 15px;
     font-weight: bold;
     grid-column: span 3;
-}
-
-/* The container */
-.radio-container {
-    font-size: 0.9rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
 }
 
 /* Hide the browser's default radio button */
