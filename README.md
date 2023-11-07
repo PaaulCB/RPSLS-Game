@@ -135,7 +135,35 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 
 ### Wireframe
 
+- This are a hand-draw wireframe of the game menu and game area in different screen sizes.
+
+  ![Game menu](assets/images/hand-draw-menu.jpg)
+  ![Game area](assets/images/hand-draw-game.jpg)
+
 ### Font and colors
+
+- _Fonts_
+
+  This are the fonts used for this game
+
+  - Paytone One
+  - Pridi
+  - Roboto Mono
+
+- _Colors_
+
+  This are the color used for this game
+
+  - #091620 ![Color #091620](assets/images/color-091620.jpg)
+  - #16933b ![Color #16933b](assets/images/color-16933b.jpg)
+  - #5c3c62 ![Color #5c3c62](assets/images/color-5c3c62.jpg)
+  - #7A5980 ![Color #7A5980](assets/images/color-7A5980.jpg)
+  - #7A598080 ![Color #7A598080](assets/images/color-7A598080.jpg)
+  - #7ed0b3 ![Color #7ed0b3](assets/images/color-7ed0b3.jpg)
+  - #C2E7DA ![Color #C2E7DA](assets/images/color-C2E7DA.jpg)
+  - #db5c5c ![Color #db5c5c](assets/images/color-DB5C5C.jpg)
+  - #000 ![Color #000](assets/images/color-000.jpg)
+  - #00000080 ![Color #00000080](assets/images/color-00000080.jpg)
 
 ## Testing
 
@@ -185,7 +213,7 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
 - _HTML_
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F)
 - _CSS_
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F&profile=css3svg&uem=all&warning=1&vextwarning=&lang=en)
 - _Lighthouse report_
 
   Lighthouse report results that we run in incognito mode
@@ -193,6 +221,22 @@ RPSLS game it a site that wants to provide a challenging game to the useres who 
   ![Lighthouse report](assets/images/lighthouse-report.jpg)
 
 ### Fixed Bugs
+
+- When the user checked the guest checkbox and after that resize the screen and uncheck the checkbox, the layout didn't show as intented. I fixed it creating guestLayout function and adding it on a resize event (Commit **6d8e884**).
+- After customizing the radio buttons, I found a bug that when clicking BO3 in the mode selector, bo5 was selected and not BO3. The problem was that i had the attribute "for" on the BO3 label, pointing at BO5. I fixed by putting the correct "for" attribute (Commit **d2b3b5b**).
+- I found that the layout was not displayed correctly when resizing the window, but it looked fine from dev tools view. I fixed it by changing the way i was checking the screen size.
+
+  Instead of:
+
+  > screen.width
+
+  I used:
+
+  > window.innerWidth
+
+  (Commit **8bb3ba9**)
+
+- Hover styles didn't work as intetnded on smaller screens. I fixed it by moving the hover styles to medium and larger screens, and adding the hover styles with a onclick event on the buttons for smaller screens. (Commit **a805c9d**)
 
 ### Unfixed Bugs
 
@@ -224,7 +268,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ### How to clone the repository
 
-1.  Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game)
+1.  Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game).
 2.  Above the list of files, click **Code**.
 
     ![Code](assets/images/clone-step-1.jpg)
@@ -235,7 +279,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 4.  Open Git Bash.
 5.  Change the current working directory to the location you want the cloned directory.
-6.  Type **git clone**, and then paste the URL you copied erlier.
+6.  Type **git clone**, and then paste the URL you copied earlier.
 
          git clone https://github.com/PaaulCB/RPSLS-Game.git
 
@@ -245,7 +289,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ### How to fork the repository
 
-1. Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game)
+1. Go to [RPSLS Game](https://github.com/PaaulCB/RPSLS-Game).
 2. In the top-right corner of the page, click **Fork**.
 
    ![Fork](assets/images/fork.jpg)
