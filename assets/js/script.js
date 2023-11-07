@@ -147,6 +147,8 @@ function checkWin(player, cpu) {
     if (checkGameOver()) {
         document.getElementById("game-over").style.visibility = "visible";
         gameOverCountdown();
+        //Update results
+        updateResults();
         setTimeout(endGame, 3000);
     } else {
         setTimeout(enablePicks, 500);
@@ -225,10 +227,24 @@ function checkGameOver() {
             gOver = cpuScore === 5 ? true : false;
             break;
         default:
-            alert("Invalid game mode");
+            criticalError("Invalid mode");
     }
 
     return gOver;
+}
+
+/**Shows the critical error message and abort the game*/
+function criticalError(error) {
+    let message = document.getElementById("critical-error");
+    message.firstElementChild.innerText = error;
+    message.style.visibility = "visible";
+
+    //Wait 2 seconds then hide the message and abort the game.
+    setTimeout(function () {
+        document.getElementById("critical-error").style.visibility = "hidden";
+    }, 2000);
+    setTimeout(endGame, 2000);
+    setTimeout(disablePicks, 501);
 }
 
 /**Get the game mode*/
@@ -258,37 +274,6 @@ function gameOverCountdown() {
     }, 1000);
 }
 
-/**
- * Hide the game area and show the game menu again, 
- * and reset what is necessary for a new game
- */
-function endGame() {
-    //Hide the game area
-    document.getElementsByClassName("game-area")[0].style.display = "none";
-    //Make the game menu visible
-    document.getElementsByClassName("game-menu")[0].style.display = "grid";
-    //Update results
-    updateResults();
-    //Reset scores
-    document.getElementById("player-score").innerText = "0";
-    document.getElementById("cpu-score").innerText = "0";
-    //Reset picks
-    document.getElementById("player-choise").innerText = "?";
-    document.getElementById("cpu-choise").innerText = "?";
-    //Delete round winner message
-    document.getElementById("round-result").innerText = "";
-    //Remove highlight class
-    removeHighlight();
-    //Enable the picks buttons
-    enablePicks();
-    //Hide history
-    hideHistory();
-    //Hide instructions
-    hideInstructions();
-    //Reset placeholder value
-    document.getElementById("username").placeholder = "Username";
-}
-
 /**Update the text on the results div*/
 function updateResults() {
     let username = document.getElementById("player-name").innerText;
@@ -314,6 +299,35 @@ function updateResults() {
     row.appendChild(lvl);
     //Append row to table;
     history.children[1].appendChild(row);
+}
+
+/**
+ * Hide the game area and show the game menu again, 
+ * and reset what is necessary for a new game
+ */
+function endGame() {
+    //Hide the game area
+    document.getElementsByClassName("game-area")[0].style.display = "none";
+    //Make the game menu visible
+    document.getElementsByClassName("game-menu")[0].style.display = "grid";
+    //Reset scores
+    document.getElementById("player-score").innerText = "0";
+    document.getElementById("cpu-score").innerText = "0";
+    //Reset picks
+    document.getElementById("player-choise").innerText = "?";
+    document.getElementById("cpu-choise").innerText = "?";
+    //Delete round winner message
+    document.getElementById("round-result").innerText = "";
+    //Remove highlight class
+    removeHighlight();
+    //Enable the picks buttons
+    enablePicks();
+    //Hide history
+    hideHistory();
+    //Hide instructions
+    hideInstructions();
+    //Reset placeholder value
+    document.getElementById("username").placeholder = "Username";
 }
 
 /**Remove the highlight class */
@@ -365,7 +379,7 @@ function cpuPick(pick) {
             }
             break;
         default:
-            alert("Error, invalid difficulty");
+            criticalError("Invalid difficulty");
     }
 }
 
