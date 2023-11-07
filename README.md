@@ -304,4 +304,18 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ### Content
 
+- The code to add border to the text on the start button was taken from [stackoverflow](https://stackoverflow.com/questions/2570972/css-font-border).
+- The code to make the footer stay at the bottom of the page was taken from [stackoverflow](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b).
+- The idea of how to fix the warning "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics." was taken from my mentor. (Commit **4c2d939**).
+- The code to customize the radio buttons and the checkbox was taken from [w3schools](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp).
+- The icons used on this game were taken from [Font Awesome](https://fontawesome.com/).
+- [Fontjoy](https://fontjoy.com) was used to choose the font families for this project.
+- [Coolors](https://coolors.co/) was used to choose the colors for this project.
+- [Birme](https://www.birme.net/) was used to crop and change the format of the images.
+- The [README.md](https://github.com/PaaulCB/worlds-rabbits/blob/main/README.md) from my last proyect was used as template for this one.
+- The steps to fork a repository were taken from [github docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+- The steps to clone a repository were taken from [github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
 ### Media
+
+- The image used for the favicon was taken from [here](https://cdn-icons-png.flaticon.com/512/6793/6793733.png).
