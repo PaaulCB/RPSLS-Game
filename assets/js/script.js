@@ -227,6 +227,8 @@ function checkGameOver() {
             gOver = cpuScore === 5 ? true : false;
             break;
         default:
+            //This function never will be executed unless 
+            //the user change the radio value manually.
             criticalError("Invalid mode");
     }
 
@@ -379,6 +381,8 @@ function cpuPick(pick) {
             }
             break;
         default:
+            //This function never will be executed unless 
+            //the user change the radio value manually.
             criticalError("Invalid difficulty");
     }
 }
