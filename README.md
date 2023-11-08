@@ -214,6 +214,11 @@ Link to the deployed site [here](https://paaulcb.github.io/RPSLS-Game/).
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F)
 - _CSS_
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F&profile=css3svg&uem=all&warning=1&vextwarning=&lang=en)
+- _JS_
+  - No errors were found when passing through [JShint](https://jshint.com/) validator.
+
+    ![JS validation metrics](assets/images/js-metrics.jpg)
+
 - _Lighthouse report_
 
   Lighthouse report results that we run in incognito mode
