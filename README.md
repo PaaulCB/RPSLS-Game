@@ -215,6 +215,7 @@ Link to the deployed site [here](https://paaulcb.github.io/RPSLS-Game/).
 - _CSS_
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpaaulcb.github.io%2FRPSLS-Game%2F&profile=css3svg&uem=all&warning=1&vextwarning=&lang=en)
 - _JS_
+
   - No errors were found when passing through [JShint](https://jshint.com/) validator.
 
     ![JS validation metrics](assets/images/js-metrics.jpg)
@@ -242,6 +243,7 @@ Link to the deployed site [here](https://paaulcb.github.io/RPSLS-Game/).
   (Commit **8bb3ba9**)
 
 - Hover styles didn't work as intetnded on smaller screens. I fixed it by moving the hover styles to medium and larger screens, and adding the hover styles with a onclick event on the buttons for smaller screens. (Commit **a805c9d**)
+- The Favicon didn't work on the deployed version. The problem was that a genereted the favicon with a incorrect path. I fixed it by genereting again the favicon with the correct path. (Commit **eef6e93**)
 
 ### Unfixed Bugs
 
